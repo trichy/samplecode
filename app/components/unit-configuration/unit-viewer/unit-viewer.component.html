@@ -1,0 +1,33 @@
+﻿<div class="widget-wrapper">
+    <div class="widget-header">
+    </div>
+    <!--<div class="widget-body jci-flat-unit-container" #divContainer id="canvas-container"  (drop)="drop($event)"
+    (dragover)="allowDrop($event)">-->
+   
+    <div class="widget-body jci-flat-unit-container" #canvasContainer>
+                <div>
+                    <img src="{{legendUrl}}" align="left" style="z-index: 99; display:block; position:absolute;" *ngIf="isAirFlowon"/>
+                </div>
+            
+        <div class="col-md-11 max-width">
+            <unit-viewer-3d *ngIf="workingUnit !== null"
+                            [unit]="workingUnit"
+                            style="width: calc(100%); min-width: 100%; max-width: 100%; display:block; text-align:match-parent; height: 495px;" >
+
+            </unit-viewer-3d>
+        </div>
+        <div class="col-md-1 min-width">
+            <div (click)="showMenu()" class="button-menu open-arrow" *ngIf="showOpen">
+                <i class="fa fa-chevron-left"></i>
+            </div>
+        </div>
+
+        <div id="box" class="box hidden">
+            <div (click)="showMenu()" class="button-menu close-arrow">
+                <i class="fa fa-chevron-right"></i>
+            </div>
+            <unit-menu (enableCabinate)="enableCabinateView($event)" [parentCanvas]="canvasContainer" (dragMenuEnd)="onMenuEndDrag($event)"></unit-menu>
+        </div>
+    </div>
+</div>
+

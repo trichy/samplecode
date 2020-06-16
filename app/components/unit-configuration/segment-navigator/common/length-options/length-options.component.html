@@ -1,0 +1,169 @@
+﻿<div class="row  filter-header">
+    <div class="col-xs-7">
+        <div class="row">
+            <div class="col-xs-10">
+                <h3 class="filter-label labelleft">
+                    Variable Length
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" 
+         style="border-bottom: 1px solid #ccc; width:96%; margin-bottom: 15px; margin-left:10px;">
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <label>  
+                <strong>Core Length</strong>   
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label style="margin-left: 5%">  
+                <strong>Downstream Growth</strong>   
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label>  
+                <strong>Upstream Growth</strong>   
+            </label>
+        </div>
+    </div>
+    <div class="row" 
+         style="margin-bottom:10px">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core"> 
+                Default:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left:-10px;">
+            <spinner [Id]="'coreDefault_' + segment.id.toString()"
+                     [(ngModel)]="coreDefault"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width"
+                     [Disabled]="'true'">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down">   
+                Default:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <spinner [Id]="'downDefault_' + segment.id.toString()"
+                     [(ngModel)]="downDefault"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width"
+                     [Disabled]="'true'">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up"> 
+                Default:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <spinner [Id]="'upDefault_' + segment.id.toString()"
+                     [(ngModel)]="upDefault"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width"
+                     [Disabled]="'true'">
+            </spinner>
+        </div>
+    </div>
+    <div class="row" 
+         style="margin-bottom:10px">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core">  
+                Addition:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left:-10px;">
+            <spinner [Id]="'coreAddition_' + segment.id.toString()"
+                     [(ngModel)]="coreAddition"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down">  
+                Addition: 
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <spinner [Id]="'downAddition_' + segment.id.toString()"
+                     [(ngModel)]="downAddition"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up">  
+                Addition:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <spinner [Id]="'upAddition_' + segment.id.toString()"
+                     [(ngModel)]="upAddition"
+                     [Min]="spinnerCfg.Min"
+                     [Max]="spinnerCfg.Max"
+                     [Step]="spinnerCfg.Step"
+                     [Width]="spinnerCfg.Width">
+            </spinner>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core">  
+                Total:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left:-10px;">
+            <input type="number" 
+                   class="total-text" 
+                   value="{{coreAddition + coreDefault}}" 
+                   readonly />
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down"> 
+                Total: 
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <input type="number" 
+                   class="total-text" 
+                   value="{{downAddition + downDefault}}" 
+                   readonly />
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up">  
+                Total:  
+            </label>
+        </div>
+        <div class="col-xs-2" 
+             style="margin-left: -20px;">
+            <input type="number" 
+                   class="total-text" 
+                   value="{{upAddition + upDefault}}" 
+                   readonly />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+﻿
+.divborder {
+    margin-left: -15px;
+    margin-top: 12px;
+    border-right: 1px solid #ccc;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: none;
+    padding: 1px 4px;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    display: block;
+}
+
+.panel-body {
+    height: 35vh;
+}
+
+.panel-heading-bold {
+    background-color: #ffffff;
+}
+
+.border-top {
+    border-top: 1px solid #ccc;
+}
+
+.border-right {
+    border-right: 1px solid #ccc;
+}
+
+.filter-header {
+    display: flex;
+}
+
+.filter-depth {
+    min-height: 250px;
+}
+
+.no-padding-margin {
+    padding: 0;
+    margin: 0;
+}
+
+.border_left {
+    border-left: 0px solid #cccccc;
+}
+
+.border_right {
+    border-right: 1px solid #cccccc;
+}
+
+.form-control.filterMedia {
+    width: 64%;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+}
+
+.form-control.filterDepth {
+    padding: 0 3px;
+}
+
+.filter_boxStyle {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+label.shift_style {
+    float: right;
+}
+
+.shift_depth {
+    padding-left: 0px;
+    padding-right: 4px;
+}
+
+.shift_depthText {
+    padding-left: 0px;
+    padding-right: 7px;
+}
+
+select.selectBox {
+    width: 101%;
+    margin-left: -1px;
+}
+
+.padding_left_0 {
+    padding-left: 0px;
+}
+
+.padding_right_0 {
+    padding-right: 0px;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}
+
+.editProduct {
+    font-family: 'FontAwesome';
+    font-weight: 100;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.tabs-left {
+    margin: 0;
+}
+
+    .tabs-left .navTabs {
+        margin-top: 2px;
+        padding: 0;
+    }
+
+    .tabs-left .tab-content {
+        padding: 0;
+    }
+
+.nav-tabs > li:first-child {
+     padding-left: 20px; 
+}

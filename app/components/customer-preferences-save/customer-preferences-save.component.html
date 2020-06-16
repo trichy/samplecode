@@ -1,0 +1,19 @@
+<div class="panel panel-default outer-panel">
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+        <h3 class="modal-title" id="myModalLabel">Save Preferences</h3>
+    </div>
+
+
+    <div class="panel-body" style="padding-bottom: 0px;">
+        <div class="row">
+            <div class="form-group col-xs-12 form-group-save-as">
+                <label class="pull-left">Name</label>
+                <div>
+                    <input class="form-control pull-left" type="text" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer more-options-footer popout-footer"><button style="width: 100px;" class="btn btn-custom" (click)="btnSaveClicked()">Save</button></div>
+</div>

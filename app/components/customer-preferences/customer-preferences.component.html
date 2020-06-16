@@ -1,0 +1,465 @@
+<div class="col-xs-12">
+	<app-customer-preferences-toolbar [cate]="cate" (myEvent)="eventHandler($event)"></app-customer-preferences-toolbar>
+	<!--This is just testing after VSTS migration from TFS-->
+</div>
+<div class="col-xs-12 col-lg-6">
+	<card [title]="'Fans'" [controlName]="'Fans'" *ngIf="model.fans.fans">
+		<div class="panel-body" style="min-height: 240px;">
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Fan Type</dt>
+				</dl>
+				<div class="form-group">
+					<div class="checkbox">
+						<input type="checkbox" value="1" checked>
+						<label>Plenum</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Airfoil</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Forward Curve</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Drive Type</dt>
+				</dl>
+				<div class="form-group">
+					<div class="checkbox">
+						<input type="checkbox" value="1" checked>
+						<label>Belt</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Direct</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Quantity</dt>
+				</dl>
+				<div class="form-group">
+					<div class="checkbox">
+						<input type="checkbox" value="1" checked>
+						<label>Single</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Dual</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Mulitple</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Fan Bearings</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1" name="radioFanBearings">
+						<label>Standard</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioFanBearings" checked>
+						<label>L-10,200,000 hour</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3" style="clear: left;">
+				<dl class="checkbox-group-title">
+					<dt>Other</dt>
+				</dl>
+				<div class="form-group">
+					<div class="checkbox">
+						<input type="checkbox" value="1" checked>
+						<label>Belt Guards</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Fan Cage</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>Inlet Screen</label>
+					</div>
+				</div>
+			</div>
+			<!-- more options -->
+			<div class="col-sm-3" [hidden]="!fansAccordionShowMoreOptions">
+				<dl class="checkbox-group-title">
+					<dt>Selection Method</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1" name="radioSelectionMethod">
+						<label>Standard</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioSelectionMethod" checked>
+						<label>New Motor Synchronous sp.</label>
+					</div>
+				</div>
+			</div>
+			<!--<div class="col-sm-3" [hidden]="!fansAccordionShowMoreOptions">
+				<dl class="checkbox-group-title">
+					<dt>Type</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1" name="radioType">
+						<label>AF</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioType" checked>
+						<label>FC</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioType">
+						<label>PL</label>
+					</div>
+				</div>
+			</div>-->
+			<div class="col-sm-3" [hidden]="!fansAccordionShowMoreOptions">
+				<dl class="checkbox-group-title">
+					<dt>Class</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1" name="radioClass">
+						<label>S</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioClass" checked>
+						<label>II</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" name="radioClass">
+						<label>III</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer more-options-footer"><a href="javascript:void(0);" (click)="onFansAccordionShowMoreOptionsClicked()">{{fansAccordionFooterText}}</a></div>
+
+	</card>
+
+	<card [title]="'Service Access'" [controlName]="'ServiceAcces'" *ngIf="model.general.Service">
+		<div class="panel-body" style="min-height: 290px;">
+			<!--<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt></dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>24 &quot; *</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>18 &quot; *</label>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt></dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>24 &quot; </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>18 &quot; </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>12 &quot; </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Panel</label>
+					</div>
+				</div>
+			</div>-->
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Service Access</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Custom(##)</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>24 inch </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>18 inch </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>12 inch </label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Panel</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Light Bulbs</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>None</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>CFL</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>LED</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>48&quot; Twin Tube</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>Test Port</dt>
+				</dl>
+				<!--<toggleSH name="test" [(ngModel)]="modelSwitch.generalCabinet"> </toggleSH>-->
+				<toggleYN name="test" [(ngModel)]="modelSwitch.test"> ></toggleYN>
+				<!--{{ modelSwitch | json }}-->
+
+			</div>
+			<div class="col-sm-3" style="clear: left;">
+				<dl class="checkbox-group-title">
+					<dt>Light Fixture</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>None</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Standard</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Marine</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<dl class="checkbox-group-title">
+					<dt>View Port</dt>
+				</dl>
+
+				<toggleYN name="viewPort" [(ngModel)]="modelSwitch.viewPort"></toggleYN>
+
+				<!--{{ modelSwitch | json }}-->
+
+			</div>
+		</div>
+		<div class="panel-footer more-options-footer"><a href="javascript:void(0);" onclick="alert('not implemented'); return false;">more options</a></div>
+	</card>
+
+</div>
+<div class="col-xs-12 col-lg-6">
+
+	<card [title]="'Cooling Coil'" [controlName]="'CoolCoil'" *ngIf="model.coolingHeating.CoolingCoils">
+		<div class="panel-body" style="min-height: 240px;">
+			<div class="col-sm-4">
+				<dl class="checkbox-group-title">
+					<dt>Coil Type</dt>
+				</dl>
+				<div class="form-group">
+					<div class="checkbox">
+						<input type="checkbox" value="1" checked>
+						<label>1/2&quot; Corrugated</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>5/8&quot; Sine</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" value="1">
+						<label>5/8&quot; Flat</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<dl class="checkbox-group-title">
+					<dt>IAQ Drainpan Material</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Galvanized Steel</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Stainless Steel (304)</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Stainless Steel (316L)</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<dl class="checkbox-group-title">
+					<dt>Coil Casing</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Galvanized Steel</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Stainless Steel (304)</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Stainless Steel (316L)</label>
+					</div>
+				</div>
+			</div>
+			<!--<div class="col-sm-4" style="clear: left;">
+				<dl class="checkbox-group-title">
+					<dt></dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Galvanized Steel</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Stainless Steel</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<dl class="checkbox-group-title">
+					<dt></dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Galvanized Steel</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Stainless Steel</label>
+					</div>
+				</div>
+			</div>-->
+			<div class="col-sm-4" style="clear: left;">
+				<dl class="checkbox-group-title">
+					<dt>Downspout Material</dt>
+				</dl>
+				<div class="form-group">
+					<div class="radio">
+						<input type="radio" value="1">
+						<label>Composite</label>
+					</div>
+					<div class="radio">
+						<input type="radio" value="1" checked>
+						<label>Copper</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer more-options-footer"><a href="javascript:void(0);" onclick="alert('not implemented'); return false;">more options</a></div>
+
+	</card>
+
+	<card [title]="'Fan Motors'" [controlName]="'fMotors'" *ngIf="model.fans.fansMotors">
+		<div class="panel-body">
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Power Supply</label>
+				<div>
+					<select class="form-control select-inline">
+						<option selected>460/3/60</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Motor Type</label>
+				<div>
+					<select class="form-control select-inline">
+						<option selected>TEFC</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Shaft Grounding Ring</label>
+				<toggleYN name="test" [(ngModel)]="modelSwitch.shaft"></toggleYN>
+			</div>
+		</div>
+		<div class="panel-footer more-options-footer"><a href="javascript:void(0);" onclick="alert('not implemented'); return false;">more options</a></div>
+
+	</card>
+
+	<card [title]="'Cabinet'" [controlName]="'Cabinet'" *ngIf="model.general.Cabinet">
+		<div class="panel-body">
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Baserail Height</label>
+				<div>
+					<select class="form-control select-inline">
+						<option selected>6 &quot; </option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Insulation</label>
+				<div>
+					<select class="form-control select-inline">
+						<option selected>2 &quot;  Foam</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label></label>
+				<!--<div>
+					<select class="form-control select-inline">
+						<option selected>Galvanized Steel</option>
+					</select>
+				</div>-->
+			</div>
+			<div class="form-group display-inline col-xs-12 col-sm-6">
+				<label>Floor Material</label>
+				<div>
+					<select class="form-control select-inline">
+						<option selected>STD Ga. G-90 Galvanized</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer more-options-footer"><a href="javascript:void(0);" onclick="alert('not implemented'); return false;">more options</a></div>
+	</card>
+
+</div>
+
+

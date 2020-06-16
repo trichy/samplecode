@@ -1,0 +1,26 @@
+﻿<div class="col-xs-5">
+    <h3>
+        {{headerCaption}}
+        <i *ngIf="showOverrideButton()"
+           class="editProduct fa fa-pencil pointer"
+           (click)="startOverrideModal()">
+        </i>
+
+        <modal-dialog *ngIf="showOverrideButton()"
+                      [(visible)]="showOverrideModal">
+            <descriptor-override [show]="showOverrideModal"
+                                 [descriptorinstancelist]="descriptorInstanceList"
+                                 (okclick)="onOverrideModal_OkClick()"
+                                 (cancelclick)="onOverrideModal_CancelClick()"
+                                 style="width:100%;">
+            </descriptor-override>
+        </modal-dialog>
+    </h3>
+</div>
+<div class="col-xs-7 filter_boxStyle">
+    <div class="col-xs-12 filter_boxStyle">
+        <h3 style="float: right;padding-right: 10px;margin-top: 10px;">
+            Segment APD: <span style="margin-left: 5px;">{{apdCaption}}</span>
+        </h3>
+    </div>
+</div>

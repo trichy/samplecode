@@ -1,0 +1,205 @@
+﻿<div class="col-xs-12 filter_boxStyle">
+    <div class="col-xs-6 form-group shift_depth leftBoxSize">
+        <div class="col-xs-5 filter_boxStyle"><label class="shift_style">Location:&nbsp;</label></div>
+        <div class="col-xs-7 filter_boxStyle">
+            <combobox-door-unit-side [producttype]="segment.unit.productType "
+                                     [overridestyle]="'width: 100%; min-width: 0px; display: inline-block;   padding: 0 3px;'"
+                                     [brandoption]="segment.unit.unitOptions.brandOption"
+                                     [(ngModel)]="currentUnitSide">
+            </combobox-door-unit-side>
+        </div>
+    </div>
+    <div class="col-xs-6 filter_boxStyle rightBoxSize">
+        <div class="col-xs-6 filter_boxStyle">
+            <label class="shift_style" for="addAccess">Add Access?:&nbsp;</label>
+        </div>
+        <div class="col-xs-6 filter_boxStyle">
+            <div class="form-group">
+                <div class="checkbox checkbox-top">
+                    <input id="addAccess"
+                           type="checkbox"
+                           value="1"
+                           (change)="currentOpeningIsDeleted = !currentOpeningIsDeleted"
+                           [(ngModel)]="!currentOpeningIsDeleted">
+                    <label for="addAccess"> </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 filter_boxStyle">
+    <div class="col-xs-6 form-group shift_depth leftBoxSize">
+        <div class="col-xs-5 filter_boxStyle"><label class="shift_style">Access Type:&nbsp;</label></div>
+        <div class="col-xs-7 filter_boxStyle">
+            <combobox-door-access-type [producttype]="segment.unit.productType "
+                                       [overridestyle]="'width: 100%; min-width: 0px; display: inline-block; padding: 0 3px;'"
+                                       [brandoption]="segment.unit.unitOptions.brandOption"
+                                       [enabled]="false"
+                                       [(ngModel)]="currentOpening.openingType">
+            </combobox-door-access-type>
+        </div>
+    </div>
+    <div class="col-xs-6 filter_boxStyle rightBoxSize">
+        <div class="col-xs-6 filter_boxStyle">
+            <label class="shift_style">Access Width:&nbsp;</label>
+        </div>
+        <div class="col-xs-6 filter_boxStyle">
+            <spinner [Id]="accessWidthSpinner.Id"
+                     [Min]="accessWidthSpinner.Min"
+                     [(ngModel)]="currentOpening.accessWidth"
+                     [Max]="accessWidthSpinner.Max"
+                     [Step]="accessWidthSpinner.Step"
+                     [Disabled]="currentOpening.isDeleted"
+                     [Show]="showSpinner"
+                     (keypress)="accessWidthSpinner_keyPress($event)"
+                     [WidthPercentage]="89.9"
+                     (onChangeValue) ="widthChange()"
+                     (change)="widthChange()">
+            </spinner>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 filter_boxStyle" *ngIf="currentOpening.openingType === 'Door'">
+    <div class="col-xs-6 form-group shift_depth leftBoxSize">
+        <div class="col-xs-5 filter_boxStyle"><label class="shift_style">View Port:&nbsp;</label></div>
+        <div class="col-xs-7 filter_boxStyle">
+            <combobox-door-viewport-type [producttype]="segment.unit.productType "
+                                         [overridestyle]="'width: 100%; min-width: 0px; display: inline-block;  padding: 0 3px;'"
+                                         [brandoption]="segment.unit.unitOptions.brandOption "
+                                         [enabled]="!currentOpening.isDeleted"
+                                         [(ngModel)]="currentDoor.viewportType"
+                                         (selectionchanged)="viewPortChange($event)">
+            </combobox-door-viewport-type>
+        </div>
+    </div>
+    <div class="col-xs-6 filter_boxStyle rightBoxSize">
+        <div class="col-xs-6 filter_boxStyle">
+            <label class="shift_style">Fastener:&nbsp;</label>
+        </div>
+        <div class="col-xs-6 filter_boxStyle">
+            <combobox-door-fastener-type [producttype]="segment.unit.productType "
+                                         [overridestyle]="'width: 90%; min-width: 0px; display: inline-block; padding: 0 3px;'"
+                                         [brandoption]="segment.unit.unitOptions.brandOption"
+                                         [enabled]="!currentOpening.isDeleted"
+                                         [(ngModel)]="currentDoor.fastenerType">
+            </combobox-door-fastener-type>
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 filter_boxStyle" *ngIf="currentOpening.openingType === 'Door'">
+    <div class="col-xs-6 form-group shift_depth leftBoxSize">
+        <div class="col-xs-5 filter_boxStyle"><label class="shift_style">Hinge:&nbsp;</label></div>
+        <div class="col-xs-7 filter_boxStyle">
+            <combobox-door-hinge-location [producttype]="segment.unit.productType "
+                                          [overridestyle]="'width: 100%; min-width: 0px; display: inline-block; padding: 0 3px;'"
+                                          [brandoption]="segment.unit.unitOptions.brandOption"
+                                          [enabled]="!currentOpening.isDeleted"
+                                          [(ngModel)]="currentDoor.hingeLocationByAirFlowDirection">
+            </combobox-door-hinge-location>
+        </div>
+    </div>
+    <div class="col-xs-6 filter_boxStyle rightBoxSize">
+        <div class="col-xs-12 filter_boxStyle">
+            <div class="col-xs-3 filter_boxStyle"> <label class="shift_style" for="safetyLatch">Safety Latch:&nbsp;</label></div>
+            <div class="col-xs-1 filter_boxStyle">
+                <!--<div style="padding-left:5px; padding-right:0px;">
+                    <input type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.HasSafetyLatch"
+                           id="safetyLatch"/>
+                </div>-->
+                <div class="checkbox checkbox-top">
+                    <input id="shift_style"
+                           type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.hasSafetyLatch">
+                    <label for="shift_style"> </label>
+                </div>
+            </div>
+            <div class="col-xs-3 filter_boxStyle"><label class="shift_style" for="testPort">Test Port:&nbsp;</label></div>
+            <div class="col-xs-1 filter_boxStyle">
+                <!--<div style="padding-left:5px; padding-right:0px;">
+                    <input type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.HasTestPort"
+                           id="testPort"/>
+                </div>-->
+                <div class="checkbox checkbox-top">
+                    <input id="testPort"
+                           type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.hasTestPort">
+                    <label for="testPort"> </label>
+                </div>
+            </div>
+            <div class="col-xs-3 filter_boxStyle"><label class="shift_style" for="hasPareGasket">Spare Gasket:</label></div>
+            <div class="col-xs-1 filter_boxStyle">
+                <!--<div style="padding-left:5px; padding-right:0px;">
+                    <input type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.HasSpareGasket"
+                           id="hasPareGasket"/>
+                </div>-->
+                <div class="checkbox checkbox-top">
+                    <input id="hasPareGasket"
+                           type="checkbox"
+                           value="1"
+                           disabled
+                           [(ngModel)]="currentDoor.hasSpareGasket">
+                    <label for="hasPareGasket"> </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-xs-12 door_option"
+     *ngIf="currentOpening.openingType === 'Door'">
+    <div class="col-xs-9 filter_boxStyle">
+        <h3 style="padding-left:15px; margin-top: 10px">
+            Door Options (All Doors)
+        </h3>
+    </div>
+</div>
+
+
+<div class="col-xs-12 filter_boxStyle" *ngIf="currentOpening.openingType === 'Door'">
+    <div class="col-xs-6 form-group shift_depth leftBoxSize">
+        <div class="col-xs-5 filter_boxStyle"><label class="shift_style">Door Swing:&nbsp;</label></div>
+        <div class="col-xs-7 filter_boxStyle">
+            <combobox-door-swing-direction [producttype]="segment.unit.productType "
+                                           [overridestyle]="'width: 100%; min-width: 0px; display: inline-block;  padding: 0 3px;'"
+                                           [brandoption]="segment.unit.unitOptions.brandOption "
+                                           [enabled]="!currentOpening.isDeleted"
+                                           [(ngModel)]="currentDoor.swingDirection">
+            </combobox-door-swing-direction>
+        </div>
+    </div>
+    <div class="col-xs-6 filter_boxStyle rightBoxSize">
+        <div class="col-xs-8 filter_boxStyle">
+            <label class="shift_style">Noncontact Safety-Interlock  Switch:&nbsp;</label>
+        </div>
+        <div class="col-xs-1 filter_boxStyle">
+            <!--<input type="checkbox"
+                   value="1"
+                   disabled
+                   [(ngModel)]="currentDoor.HasInterlock" />-->
+
+            <div class="form-group">
+                <div class="checkbox checkbox-top">
+                    <input id="Safety" type="checkbox" [(ngModel)]="currentDoor.hasInterlock" value="1" disabled>
+                    <label for="Safety"> </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

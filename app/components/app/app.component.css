@@ -1,0 +1,28 @@
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    /*.body-content {
+        padding-top: 50px;
+    }*/
+}
+
+:host {
+    /*display: flex;
+    overflow: hidden;
+    height: 100vh;*/
+}
+
+    :host main {
+        /*flex: 1;*/
+        position: relative;
+    }
+
+    :host /deep/ router-outlet ~ * {
+        position: absolute;
+        width: calc(100% - 10px);
+        height: calc(100% - 20px);
+    }
+
+
+.tab-content{
+	padding-top: 0px !important;
+}

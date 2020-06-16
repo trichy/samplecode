@@ -1,0 +1,29 @@
+﻿<div class="widget-wrapper">
+    <div class="widget-header">
+        <div class="button-strip pull-right">
+            <i id="threeDUnitControl" name="threeDUnitControl" class="pull-right fa fa-caret-up"></i>
+        </div>
+    </div>
+   
+    <div class="widget-body jci-flat-unit-container">
+
+        <!--<ng-template add-flat-fliter-unit></ng-template>-->
+        <div style="display:inline-block; text-align:center;">
+            
+            <span>Tunnel A</span>
+            <div class="duct-container segmentImages">
+                <button type="button" class="btn btn-custom secondary tunnelbtn" id="btnTunnel" style="">Tunnel A</button>
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/Duct.png" class="duct" />
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/ReturnFanOn.gif" class="fan-on" (click)="onClickFanSegment($event)" />
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/ReturnFanOff.png" class="fan-off" (click)="onClickFanSegment($event)" />
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/CoolingCoil-25.png" class="coil" (click)="onClickCoilSegment($event)" />
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/AirFilterOff.png" class="filter" (click)="onClickFilterSegment($event)" />
+                <img src="{{baseAppUrl}}js/3d/models/duct-2D/thumbs/L_Airflow.png" class="airflow-l" />
+                <span style="position: absolute;left: -231px;bottom: -120px;font-size:  8px;width: 40px;" class="airflow-text">AIRFLOW</span>
+                <button type="button" class="btn btn-custom secondary show3D " id="btnShow" style="">Show 3D</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

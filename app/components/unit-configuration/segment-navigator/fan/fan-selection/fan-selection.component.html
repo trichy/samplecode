@@ -1,0 +1,52 @@
+﻿<div class="container-fluid">
+    <div class="row" style="padding-top:5px;">
+        <div class="col-xs-1 ">
+            <button type="button" 
+                    name="" id="" 
+                    (click)="viewFans()" 
+                    [disabled]="isInvalidNumber" 
+                    class="btn btn-custom btn-block jci-btn-grid">
+                View Fans
+            </button>
+            <!-- [disabled]="!disabledFanView"-->
+        </div>
+        <div class="col-sm-4 col-xs-offset-7 flex-container" 
+             style="justify-content: space-around;">
+            <div class="col-xs-12  jci-btn-grid">
+                <button type="button" 
+                        name="" 
+                        id="" 
+                        class="btn btn-custom secondary col-xs-3 col-xs-offset-2 margin-right">
+                    Fan Curve
+                </button>
+                <button type="button" 
+                        name="" 
+                        id="" 
+                        class="btn btn-custom secondary col-xs-3 margin-right">R
+                    Rate Sound
+                </button>
+                <button type="button" 
+                        name="" 
+                        id="" 
+                        class="btn btn-custom secondary col-xs-3 margin-right">
+                    Fan Options
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" 
+         style="padding-bottom: 16px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <idGridTable #gridResult 
+                             [idTable]="'fan-rating-model'" 
+                             [primaryId]="model.primaryId" 
+                             [dataSource]="model.dataSource" 
+                             [columns]="model.columns"
+                             [showGrid]="showGrid" 
+                             [features]="model.features">
+                </idGridTable>
+            </div>
+        </div>
+    </div>
+</div>

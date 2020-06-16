@@ -1,0 +1,47 @@
+﻿<div *ngIf="unit !== null"
+     class="row">
+    <div class="col-xs-12">
+        <div class="page-wrapper">
+            <div class="content-wrapper">
+                <div class="row tunnelLayout">
+                    <div class="col-xs-1 tunnelLayout_L">
+                        <div class="border_out" id="tunnelPanel">
+                            <tunnel-navigator *ngIf="_workingData.WorkingUnit !== null"
+                                              [unit]="_workingData.WorkingUnit"
+                                              (segmentSelected)="validateSegmentSelected($event)"
+                                              (setTunnelFocus)="setTunnelFocus($event)">
+                            </tunnel-navigator>
+                        </div>
+                        <div class="PropertyBox">
+                            <properties-selector></properties-selector>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 tunnelLayout_M">
+                        <div class="tunnelViewer border_out">
+                            <unit-viewer #unitViewer (enableCabinateP)="activateCabinate()" (newSegmentAdded)="onNewSegmentAdded($event)"></unit-viewer>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 tunnelLayout_R">
+                        <div class="OverviewBox">
+                            <footprint-map (viewChange)='viewChanged($event)'></footprint-map>
+                        </div>
+                        <div class="DetailBox">
+                            <detail-selector *ngIf="_workingData.WorkingUnit !== null"
+                                             [unit]="_workingData.WorkingUnit" (enableAirlFlowIndicatore)="enableAirlFlowIndicatore($event)">
+                            </detail-selector>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <cabinet-navigator [unit]="_workingData.WorkingUnit"></cabinet-navigator>
+                </div>
+                <div class="row unitNavigator">
+                    <unit-navigator [unit]="_workingData.WorkingUnit" (deleteSegment)="deleteSegment($event)"></unit-navigator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

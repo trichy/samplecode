@@ -1,0 +1,24 @@
+<div class="form-group display-inline col-xs-12">
+    <label class="text-align-left-narrow col-xs-5">{{header}}</label>
+    <div class="col-xs-6">
+        <div class="{{ getWrapperClasses() }}" [style.width]=" (handleWidth  + labelWidth ) +'px'">
+            <div #container class="{{ baseClass }}-container"
+                 [style.width]=" ((handleWidth * 2) + labelWidth) +'px'"
+                 [style.margin-left]="getLabelMarginLeft()">
+                <!--
+                -->
+                <span #on [innerHTML]="(inverse) ? offText : onText" class="{{ (inverse) ? getOffClasses() : getOnClasses() }}"></span>
+                <!--
+                -->
+                <span #label class="{{ baseClass }}-label">&nbsp;{{ labelText }}</span>
+                <!--
+                -->
+                <span #off [innerHTML]="(inverse) ? onText : offText" class="{{ (inverse) ? getOnClasses() : getOffClasses() }}"></span>
+                <!--
+                -->
+                <input type="checkbox" [(ngModel)]="value" [readonly]="readonly" [disabled]="disabled"
+                       (focus)="onFocus()" (blur)="onBlur()">
+            </div>
+        </div>
+    </div>
+</div>

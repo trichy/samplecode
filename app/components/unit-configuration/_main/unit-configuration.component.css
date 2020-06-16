@@ -1,0 +1,288 @@
+﻿.body-content {
+    height: 100vh;
+}
+
+.navbar-left {
+    /*background-color: grey;*/
+    min-height: 395px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.page-wrapper {
+    /*background-color: antiquewhite;*/
+    height: 100%;
+}
+
+/*.page-wrapper:after {
+        clear: both;
+    }
+
+    .page-wrapper:before {
+        clear: both;
+    }*/
+
+.nav-wrapper {
+    /*background-color: aliceblue;*/
+    width: 250px;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    background-color: grey;
+}
+
+.content-wrapper {
+    /*background-color: bisque;*/
+    /**margin: 0 0 0 203px !important;*/
+    min-height: 100%;
+}
+
+.filter-wrapper {
+    width: 100%;
+}
+
+.filter-header {
+    position: relative;
+    /*left: 50%;*/
+    width: 100%;
+    height: 15px;
+    display: inline-block;
+    background-color: #e8e8e8;
+}
+
+    .filter-header .fa {
+        display: block;
+        text-align: center
+    }
+
+.btn-primary {
+    color: #fff;
+    background: #1375CF;
+    height: 30px;
+    width: 97px;
+}
+
+
+.btn-secondary {
+    color: #fff;
+    background-color: #1bada3;
+    border: none;
+}
+
+.tab-align {
+    margin-left: 15px;
+}
+
+/*@media(max-width:768px) {
+	.pull-margin-left {
+		margin-left: 29% !important;
+	}
+}*/
+
+
+.imgFF {
+    margin: 2px;
+    height: 30%;
+    width: 30%;
+    padding-left: -10px;
+    cursor: pointer;
+}
+
+.jci-panel-heading {
+    /* background-color: grey; */
+}
+
+
+.panel > .jci-panel-heading.collapsed:after {
+    content: "\f0da";
+    /*margin-left: 68%;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.panel > .jci-panel-heading:after {
+    content: "\f0d7";
+    /*margin-left: 68%;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.jci-panel-body {
+    padding: 0px;
+}
+
+.jci-panel-group {
+    margin-bottom: 0px;
+}
+
+.padding_left {
+    padding-left: 2px;
+}
+
+.padding_right_0 {
+    padding-right: 0px;
+}
+
+.tunnelLayout {
+    margin-bottom: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+    .tunnelLayout .tunnelLayout_L {
+        position: relative;
+        padding:0;
+        width: 16%;
+        height: 529px;
+    }
+    .tunnelLayout .tunnelLayout_M {
+        padding: 0;
+        width: 74%;
+    }
+    .tunnelLayout .tunnelLayout_R {
+        padding: 0;
+        width: 10%;
+        height: 529px;
+    }
+    .tunnelLayout .tunnelViewer {
+        margin: 0 5px;
+    }
+
+#tunnelPanel {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    min-height:248px;
+    height: 248px;
+}
+
+#propertyPanel{
+    /*position: absolute;
+    bottom: 0;
+    width: 100%;*/
+}
+
+.panel-group > .accordion > .panel-collapse .panel-body > form div {
+    padding: 0;
+}
+
+.panel-group{margin-bottom: 0;}
+.panel-group .properties {
+    margin-top: 6px;
+}
+
+.panel-body {
+    padding: 0;
+    min-height: 100px;
+}
+.properties .panel-body {
+    height: 278px;
+}
+
+form > .radio > label::before{padding-left:25px;}
+.radio > input[type="radio"] {
+    margin-left: 25px;
+}
+.radio { 
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.radio label{
+    padding-left: 40px;
+}
+
+
+.widget-header {
+    position: relative;
+    width: 100%;
+    height: 23px;
+    display: inline-block;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #ccc;
+}
+.widget-body {
+    min-height: 40px;
+}
+.border_out {
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.DetailBox {
+    margin-top: 4px;
+    height: 425px;
+}
+
+.PropertyBox {
+    margin-top: 252px;
+    height: 277px;
+}
+
+.OverviewBox {
+    height: 100px;
+}
+
+.OverviewBox .widget-body {
+    height: 216px;
+}
+.DetailBox .widget-body{
+    height: 220px;
+}
+
+
+@media screen and (max-width: 1512px) and (min-width: 1320px) {
+    .DetailBox {
+        margin-top: 4px;
+        height: 392px;
+    }
+
+    .OverviewBox {
+        height: 25%;
+    }
+
+}
+
+
+@media screen and (max-width: 1319px) and (min-width: 1089px) {
+    .DetailBox {
+        margin-top: 4px;
+        height: 366px;
+    }
+
+    .OverviewBox {
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 1088px) and (min-width: 990px) {
+    .DetailBox {
+        margin-top: 4px;
+        height: 313px;
+    }
+
+    .OverviewBox {
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 989px)  {
+    .DetailBox {
+        margin-top: 4px;
+        height: 340px;
+    }
+
+    .OverviewBox {
+        height: 35%;
+    }
+}
+
+
+.unitNavigator{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+

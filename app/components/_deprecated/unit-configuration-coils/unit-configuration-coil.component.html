@@ -1,0 +1,53 @@
+﻿<div>
+    <div class="col-xs-2 left_tab">
+        <ul class="nav nav-tabs filter_tab">
+            <li class="active"><a href="#performance" data-toggle="tab">Coil Options</a></li>
+            <li class="disabled"><a href="#segment-options" data-toggle="tab">Segment Options</a></li>
+            <li class="disabled"><a href="#access-options" data-toggle="tab">Access Options</a></li>
+            <li class="disabled"><a href="#const-options" data-toggle="tab">Construction Overrides</a></li>
+            <li class="disabled"><a href="#coil-selection" data-toggle="tab">Coil Selection</a></li>
+        </ul>
+    </div>
+    <div class="tab-content col-xs-10 right_tab">
+        <div id="const-overrides" class="tab-pane active">
+            <div class="container-fluid">
+                <div class="row filter-header" style="margin-top: -14px">
+                    <div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <div class="col-xs-5">
+                                <h3 style="padding-left:15px; margin-top: 10px">
+                                    Coil - {{tagName}}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 filter_boxStyle">
+                        <h3 style="margin-top: 10px;padding-left: 20px;">Coil Configuration</h3>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group display-inline">
+                                <unit-configuration-coil-options></unit-configuration-coil-options>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <br />
+                        <div class="col-xs-1 ">
+                            <button class="btn btn-custom secondary btn-sm" id="btn-configure" type="button" (click)="toggleModalView()">Configure/Select Coil</button>
+                            <modal-dialog [(visible)]="showModal">
+                                <coil-select-modal id="coilSelectModal" class="coil-select-modal" [show]="showModal" style="width:100%;"></coil-select-modal>
+                            </modal-dialog>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

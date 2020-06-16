@@ -1,0 +1,60 @@
+﻿.access_comboBox input {
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.access_comboBox {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.door_option h3 {
+    padding-left: 15px;
+}
+
+.door_option {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+.filter_access h4 {
+    text-align: center
+}
+
+.filter_access {
+    margin-top: 30px;
+}
+
+.filter_boxStyle {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+label.shift_style {
+    float: right;
+    margin-right: 5px;
+}
+
+.shift_text {
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+.shift_selectBox {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}
+
+
+.checkbox {
+    margin-top: 0px;
+}

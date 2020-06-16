@@ -1,0 +1,40 @@
+﻿.panel-default {
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+.panel-body {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+
+.view > div > label {
+    float: right;
+    color: #1375cf;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.view > div:first-child > label {
+    float: left;
+}
+
+
+.view > div > label:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1007px) {
+    .view > div > label {
+        float: left;
+        color: #1375cf;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.view .leftItem {
+    padding-right: 0;
+}

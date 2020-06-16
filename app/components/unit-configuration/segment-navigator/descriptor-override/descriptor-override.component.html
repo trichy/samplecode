@@ -1,0 +1,39 @@
+﻿<div class="panel panel-default outer-panel">
+    <div class="modal-header">
+        <button class="close" 
+                (click)="onCancelClicked()">
+            <i class="fa fa-close"></i>
+        </button>
+        <h3 class="modal-title" 
+            id="designAssist">
+            Design Assist
+        </h3>
+    </div>
+
+    <div class="pane-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <idGridTable #grid_FilterOverride
+                             [idTable]="gridTableID" 
+                             [primaryId]="model.primaryId" 
+                             [rendercheckboxes]="model.renderCheckboxes"
+                             [dataSource]="descriptorInstanceList" 
+                             [columns]="model.columns" 
+                             [showGrid]="show"
+                             [features]="model.features">
+                </idGridTable>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" 
+                class="btn btn-custom" 
+                (click)="onOKClicked()"
+                [disabled]="!isOKEnabled()">
+            OK
+        </button>
+    </div>
+
+</div>
+

@@ -1,0 +1,17 @@
+﻿<br />
+<div class="col-xs-1 ">
+    <button class="btn btn-custom secondary btn-sm" 
+            id="btn-configure" 
+            type="button" 
+            (click)="toggleModalView()">
+                Configure/Select Coil
+    </button>
+    <modal-dialog [(visible)]="showModal">
+        <coil-selection id="coilSelectModal" 
+                        class="coil-select-modal" 
+                        [show]="showModal" 
+                        [segment]="segment"
+                        style="width:100%;">
+        </coil-selection>
+    </modal-dialog>
+</div>

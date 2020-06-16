@@ -1,0 +1,24 @@
+<div class="tab-content"  style="margin-left:140px;">
+    <div class="tab-pane active" id="segment-options">
+        <div class="container-fluid">
+            <div class="row  filter-header">
+                <div class="col-xs-6"><h3 style="margin-top:14px;" class="filter-label">Fan</h3></div>
+            </div>
+            <div class="row border-top">
+                <div class="col-xs-6 col-sm-6 filter-depth">
+                    <br />
+                    <div class="row">
+                        <div class="form-group display-inline">
+                            <button type="button" class="btn btn-custom secondary" (click)="toggleModalView()" style="margin-left: 25px;">Select Fans</button>
+
+                            <modal-dialog [(visible)]="showModal">
+                                <fan-rating-modal id="fanRatingModal" class="col-xs-12 col-lg-12 fan-rating-modal" ></fan-rating-modal>
+                            </modal-dialog>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

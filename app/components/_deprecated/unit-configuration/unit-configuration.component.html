@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-wrapper">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-xs-10" style="padding-left: 28px;padding-right: 5px;width: 87.53333%;">
+                        <flat-filter-unit-container [flatFilterUnits]="flatFilterUnits" (clickSegmentEvent)="clickSegmentImage($event)"></flat-filter-unit-container>
+                        <!--<unit-3D-configurator id="unit3Dconfigurator" class="unit-3D-configuration"> </unit-3D-configurator>-->
+                        <div class="filter-header"></div>
+                    </div>
+                    <div class="col-xs-2" style="padding-left: 0px;padding-right: 0px;width:12.16667%;">
+                        <nav class="navbar navbar-left segmentIcons" role="navigation" style="width: 100%; margin-bottom: 0px;">
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading jci-panel-heading collapsed" data-toggle="collapse" href="#stackFlatFilter">
+                                        <div class="panel-title">
+                                            <span>Filters</span>
+                                        </div>
+                                    </div>
+                                    <div id="stackFlatFilter" class="panel-collapse collapse out">
+                                        <div class="panel-body jci-panel-body">
+                                            <!--<img class="imgFF" src="{{imageUrl}}" (click)="addNewFlatFilter()" />-->
+                                            <img class="imgFF" src="{{baseAppUrl}}js/3d/models/duct-2D/thumbs/Air-Filter.png" id="btnAddFilter" (click)="addNewFlatFilter()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading collapsed" data-toggle="collapse" href="#collapseTwo">
+                                        <div class="panel-title">
+                                            <span>Fans</span>
+                                        </div>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                        <div class="panel-body" (click)="addFan()">
+                                            <img class="imgFF" src="{{baseAppUrl}}js/3d/models/duct-2D/thumbs/ReturnFan.png" id="btnAddFan" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading collapsed" data-toggle="collapse" href="#collapseThree">
+                                        <div class="panel-title">
+                                            <span>Coils</span>
+                                        </div>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <img class="imgFF" src="{{baseAppUrl}}js/3d/models/duct-2D/thumbs/CoolingCoil.png" id="btnAddCoil" (click)="addCoil()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading collapsed" data-toggle="collapse" href="#collapsefour">
+                                        <div class="panel-title">
+                                            <span>Plenums</span>
+                                        </div>
+                                    </div>
+                                    <div id="collapsefour" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading collapsed" data-toggle="collapse" href="#collapsefive">
+                                        <div class="panel-title">
+                                            <span>Energy Recovery</span>
+                                        </div>
+                                    </div>
+                                    <div id="collapsefive" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-group jci-panel-group">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading collapsed" data-toggle="collapse" href="#collapsesix">
+                                        <div class="panel-title">
+                                            <span>Access</span>
+                                        </div>
+                                    </div>
+                                    <div id="collapsesix" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="filter-wrapper">
+                            <!--Nav Tabs-->
+                            <ul class="nav nav-tabs">
+                                <ng-container *ngFor="let menu of menuList">
+                                    <ng-container *ngIf="menu.isSelect">
+                                        <li class="segmentTab active">
+                                            <a href="#{{menu.module}}" data-toggle="tab">{{menu.title}}</a>
+                                        </li>
+                                    </ng-container>
+                                    <ng-container *ngIf="!menu.isSelect">
+                                        <li (click)="clickTabMenu(menu.title)">
+                                            <a href="#{{menu.module}}" data-toggle="tab">{{menu.title}}</a>
+                                        </li>
+                                    </ng-container>
+                                </ng-container>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--Tab Panes-->
+                        <div class="tab-content bordered">
+                            <div class="segmentOption tab-pane fade in" id="filters">
+                                <unit-configuration-filters id="unitConfigurationFilters" class="unit-configuration-filters tab-align"></unit-configuration-filters>
+                            </div>
+                            <div class="segmentOption tab-pane fade in" id="fan">
+                                <app-unit-configuration-fans></app-unit-configuration-fans>
+                            </div>
+                            <div class="segmentOption tab-pane fade in" id="coil">
+                                <unit-configuration-coil></unit-configuration-coil>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

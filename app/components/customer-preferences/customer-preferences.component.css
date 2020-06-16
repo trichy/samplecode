@@ -1,0 +1,23 @@
+.customer-preferences-categories {
+    position: absolute;
+    top: 23px;
+    right: 0px;
+    z-index: 1;
+    display: none;
+}
+
+.customer-preferences-change {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+}
+
+.customer-preferences-save {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+}

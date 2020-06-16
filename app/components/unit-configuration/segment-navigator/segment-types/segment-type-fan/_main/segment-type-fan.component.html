@@ -1,0 +1,216 @@
+﻿<div class="row tabs-left">
+    <div class="col-xs-12 navTabs">
+		<ul class="nav nav-tabs filter_tab">
+			<li [class.active]="tabSelected === 1"
+				(click)="selectedTab(1)">
+				<a href="#performance_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Performance
+				</a>
+			</li>
+			<li [class.active]="tabSelected === 2"
+				(click)="selectedTab(2)">
+				<a href="#segment-options_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Segment Options
+				</a>
+			</li>
+			<li [class.active]="tabSelected === 3"
+				(click)="selectedTab(3)">
+				<a href="#access-options_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Access Options
+				</a>
+			</li>
+			<li [class.active]="tabSelected === 4"
+				(click)="selectedTab(4)">
+				<a href="#const-overrides_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Construction Overrides
+				</a>
+			</li>
+			<li [class.active]="tabSelected === 5"
+				(click)="selectedTab(5)">
+				<a href="#fan-selection_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Fan Selection
+				</a>
+			</li>
+			<li [class.active]="tabSelected === 6"
+				(click)="selectedTab(6)">
+				<a href="#fan-option_{{segment.id.toString()}}"
+				   data-toggle="tab">
+					Fan Options
+				</a>
+			</li>
+		</ul>
+    </div>
+    <div class="tab-content col-xs-12">
+        <div class="tab-pane"
+             [class.active]="tabSelected === 1"
+             id="performance_{{segment.id.toString()}}">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-12 filter_boxStyle border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-fan [segment]="segment">
+                            </segment-header-fan>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-12  filter-depth border-right"
+                         [style.height.px]="viewHeight">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <fan-performance [fan]="getFan()">
+                            </fan-performance>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="segment-options_{{segment.id.toString()}}"
+             [class.active]="tabSelected === 2"
+             class="tab-pane">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-12 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-fan [segment]="segment">
+                            </segment-header-fan>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+							<fan-segment-option>
+							</fan-segment-option>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <!--<filter-arrangement [filterbank]="getFilterBank()">
+                    </filter-arrangement>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="access-options_{{segment.id.toString()}}"
+             [class.active]="tabSelected === 3"
+             class="tab-pane">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-12 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-fan [segment]="segment">
+                            </segment-header-fan>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <access-options [segment]="segment">
+                            </access-options>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                        <!--<filter-arrangement [filterbank]="getFilterBank()">
+                    </filter-arrangement>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="const-overrides_{{segment.id.toString()}}" class="tab-pane"
+             [class.active]="tabSelected === 4">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-12 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-fan [segment]="segment">
+                            </segment-header-fan>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <construction-overrides [segment]="segment">
+                            </construction-overrides>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane"
+             [class.active]="tabSelected === 5"
+             id="fan-selection_{{segment.id.toString()}}"
+             style="padding-left: 4px;">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-12 filter_boxStyle border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-fan [segment]="segment">
+                            </segment-header-fan>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-12  filter-depth border-right"
+                         [style.height.px]="viewHeight">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <fan-selection [segment]="segment">
+                            </fan-selection>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div id="fan-options_{{segment.id.toString()}}"
+			 [class.active]="tabSelected === 6"
+			 class="tab-pane">
+			<div class="container-fluid">
+				<div class="row filter-header">
+					<div class="col-xs-12 padding_left_0 padding_right_0 border_left border_right">
+						<div class="col-xs-12 filter_boxStyle">
+							<segment-header-fan [segment]="segment">
+							</segment-header-fan>
+						</div>
+					</div>
+				</div>
+				<div class="row border-top">
+					<div class="col-xs-5 col-sm-5 border-right filter-depth">
+						<div class="row">
+							<div class="form-group display-inline"></div>
+						</div>
+						<div class="row">
+							<fan-option>
+							</fan-option>
+						</div>
+					</div>
+					<div class="col-xs-7">
+						<!--<filter-arrangement [filterbank]="getFilterBank()">
+				</filter-arrangement>-->
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>

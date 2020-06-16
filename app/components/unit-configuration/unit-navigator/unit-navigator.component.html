@@ -1,0 +1,122 @@
+﻿<div>
+    <div class="col-xs-2 unitNav-L" *ngIf="_selectedPath">
+        <div class="col-xs-12 tab-view-box">
+            <div id="tabView" class="tab-view">
+                <div>
+                    <strong>Tab View:</strong>
+                </div>
+                <div class="radio">
+                    <input id="allcomp" type="radio" name="tabView" value="0" [(ngModel)]="tabView" (click)="tabChange($event)" checked>
+                    <label for="allcomp">All Components</label>
+                </div>
+                <div class="radio">
+                    <input id="summary" type="radio" name="tabView" value="1" (click)="tabChange($event)" [(ngModel)]="tabView" [disabled]="summaryEnable()">
+                    <label for="summary">Summary</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 segNameNav" *ngIf="tabView === '0' && _selectedPath">
+            <ul class="nav nav-tabs">
+                <li id="tab_{{segment.model.id.toString()}}" *ngFor="let segment of _selectedPath.segmentList; let i = index"
+                    [class.active]="segment.model.id.equals(_selectedSegment.id)"
+                    (click)="selectedTab(i)">
+                    <a href="#{{ segment.model.id.toString() }}"
+                       data-toggle="tab" *ngIf="segment.isSelected">
+                        {{ segment.segmentTypeDescription.toString() }}
+                        <i class="fa fa-trash pointer" (click)="deleteSelectedSegment(segment.model)"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 segNameNav" *ngIf="tabView === '1'">
+            <ul class="nav nav-tabs ">
+                <li [class.active]="tabSummarySelected === 1"
+                    (click)="selectedSummaryTab(1)">
+                    <a href="#access-options_1"
+                       data-toggle="tab">
+                        Access Options
+                    </a>
+                </li>
+                <li [class.active]="tabSummarySelected === 2"
+                    (click)="selectedSummaryTab(2)">
+                    <a href="#segment_1"
+                       data-toggle="tab">
+                        Segment
+                    </a>
+                </li>
+                <li [class.active]="tabSummarySelected === 3"
+                    (click)="selectedSummaryTab(3)">
+                    <a href="#construction_1"
+                       data-toggle="tab">
+                        Construction
+                    </a>
+                </li>
+                <li class="summary-filter-options" [ngClass]="{'hidden':_showFilterOptionSummary, 'active': (tabSummarySelected === 4)}"
+                    (click)="selectedSummaryTab(4)">
+                    <a href="#filter-options_1"
+                       data-toggle="tab">
+                        Filter Options
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="col-xs-10 unitNav-R" *ngIf="_selectedPath">
+        <div *ngIf="tabView === '0'">
+            <div class="tab-content bordered">
+                <div *ngFor="let segment of _selectedPath.segmentList; let i = index"
+                     id="{{ segment.model.id.toString() }}"
+                     class="tab-pane fade in"
+                     [class.active]="segment.model.id.equals(_selectedSegment.id)">
+                    <segment-navigator *ngIf="segment.model.id.equals(_selectedSegment.id)"
+                                       [segment]="segment.model" (deleteSegment)="deleteSelectedSegment($event)">
+                    </segment-navigator>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf=" tabView === '1'">
+            <div class="tab-content bordered">
+                <div id="access-options_1"
+                     class="tab-pane fade in"
+                     [class.active]="tabSummarySelected === 1">
+                    <div class="tab-pane-box" *ngIf="tabSummarySelected  === 1">
+                        <summary-access-options [unitModel]="_unit"></summary-access-options>
+                    </div>
+                </div>
+
+                <div id="segment_1"
+                     class="tab-pane fade in"
+                     [class.active]="tabSummarySelected === 2">
+                    <div class="tab-pane-box" *ngIf="tabSummarySelected  === 2">
+                        <div>Segment</div>
+                    </div>
+                </div>
+
+                <div id="construction_1"
+                     class="tab-pane fade in"
+                     [class.active]="tabSummarySelected === 3">
+                    <div class="tab-pane-box" *ngIf="tabSummarySelected  === 3">
+                        <summary-construction [unitModel]="_unit"></summary-construction>
+                    </div>
+                </div>
+
+                <div [ngClass]="{'hidden':_showFilterOptionSummary, 'active': (tabSummarySelected === 4)}" id="filter-options_1"
+                     class="tab-pane fade in">
+                    <div class="tab-pane-box" *ngIf="tabSummarySelected  === 4">
+                        <summary-filter-options [unitModel]="_unit"></summary-filter-options>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div>
+    <modal-dialog id="modalSave1" [(visible)]="showModal" style="align-content:center;">
+        <app-delete-segment-model (deleteSegmentCancel)="deleteSegmentCancel()" [segmentName] ="selectedSegmentName" [segmentSuffix] ="selectedSegmentSuffix" (onContinue)="deleteSegmentContinue()" id="unitConfigurationSave1" class="col-xs-12 col-lg-8" style="margin:auto;width:25%"></app-delete-segment-model>
+    </modal-dialog>
+</div>

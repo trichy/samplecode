@@ -1,0 +1,61 @@
+<div>    
+    <div class="col-xs-2 left_tab">
+        <ul class="nav nav-tabs filter_tab">
+            <li [class.active]="tabSelected === 1"
+                [class.disabled]="tabSelected !== 1"
+                (click)="selectedTab(1)"><a href="#performance" data-toggle="tab">Performance</a></li>
+            <li class="disabled"><a href="#segment-options" data-toggle="tab">Segment Options</a></li>
+            <li class="disabled"><a href="#access-options" data-toggle="tab">Access Options</a></li>
+            <li class="disabled"><a href="#const-options" data-toggle="tab">Construction Overrides</a></li>
+            <li [class.active]="tabSelected === 5"
+                [class.disabled]="tabSelected !== 5"
+                (click)="selectedTab(5)"><a href="#fan-selection" data-toggle="tab">Fan Selection</a></li>
+        </ul>
+    </div>
+    <div class="tab-content col-xs-10 right_tab">
+        <div class="container-fluid">
+            <div class="row  filter-header  border_left filter_boxStyle">
+                <div class="col-xs-6"><h3 style="margin-top:14px;" class="filter-label">Fan</h3></div>
+            </div>
+        </div>
+        <div class="row border-top">
+        </div>
+        <div class="tab-pane"
+             [class.active]="tabSelected === 1"
+             id="performance"
+             style="padding-left: 4px;">
+            <!--<div class="container-fluid">-->
+               <fan-rating-modal (changeViewFan)="getGridData($event)"></fan-rating-modal>
+            <!--</div>-->
+        </div>
+        <div class="tab-pane"
+             [class.active]="tabSelected === 5"              
+             id="fan-selection"
+             style="padding-left: 4px;">
+            <div class="container-fluid">
+                <div class="row" style="padding-top:5px;">       
+                    <div class="col-xs-1 ">
+                        <button type="button" name="" id="" (click)="viewFans()"  [disabled]="isInvalidNumber"  class="btn btn-custom btn-block jci-btn-grid">View Fans</button>
+                        <!-- [disabled]="!disabledFanView"-->
+                    </div>
+                    <div class="col-sm-4 col-xs-offset-7 flex-container" style="justify-content: space-around;">
+                        <div class="col-xs-12  jci-btn-grid">
+                            <button type="button" name="" id="" class="btn btn-custom secondary col-xs-3 col-xs-offset-2 margin-right">Fan Curve</button>
+                            <button type="button" name="" id="" class="btn btn-custom secondary col-xs-3 margin-right">Rate Sound</button>
+                            <button type="button" name="" id="" class="btn btn-custom secondary col-xs-3 margin-right">Fan Options</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding-bottom: 16px;">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <idGridTable #gridResult [idTable]="'fan-rating-model'" [primaryId]="model.primaryId" [dataSource]="model.dataSource" [columns]="model.columns"
+                             [showGrid]="showGrid" [features]="model.features"></idGridTable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

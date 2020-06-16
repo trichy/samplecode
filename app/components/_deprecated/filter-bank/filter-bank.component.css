@@ -1,0 +1,50 @@
+﻿#canvas {
+    height: calc(100%);
+    min-height: 250px;
+    max-height: 250px;
+    display: block;
+    
+}
+
+.inline-label {
+    margin-top: 3px;
+}
+table, th, td {
+    text-align:center;
+}
+
+.nopadding {
+    padding: 0px !important;
+    margin: -1px !important;
+}
+.row-style {
+    margin-top: 1%;
+}
+
+.row-margin {
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+    padding-top: 5px;
+}
+
+.configure-btn-style {
+    padding-top: 17px;
+    text-align: right;
+}
+.hr-style {
+    /*margin-bottom: 0px !important;*/
+    margin-bottom: 2px;
+    background: 1px #ccc;
+    margin-top: 5px;
+}
+
+label.shift_style {
+    float: right;
+}
+
+.combobox select {
+    width: 88%;
+    min-width: 0px;
+    margin-left: 5px;
+    padding: 0 3px;
+}

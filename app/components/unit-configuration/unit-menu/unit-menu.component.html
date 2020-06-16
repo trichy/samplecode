@@ -1,0 +1,246 @@
+﻿<nav class="navbar navbar-left segmentIcons"
+     role="navigation"
+     style="width: 100%;
+     margin-bottom: 0px;">
+    <div class="panel-group" id="stackPanel">
+
+        <div class="panel panel-primary" id="panel1">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseOne">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Filters</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseOne">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+
+                            <img src="{{filterUrl}}" />
+                            <label>Flat Filter</label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel2">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseTwo">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Fans</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseTwo">
+                <div class="panel-body scroll">
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src="{{supplyfanUrl}}" />
+                            <label>Supply Fan</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel3">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseThree">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Coils</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseThree">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <img src="{{coolingCoilUrl}}" />
+                            <label>Cooling Coil</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <img src="{{heatingCoilUrl}}" />
+                            <label>Heating Coil</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel4">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseFour">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Plenums</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseFour">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-6" appDraggable [segmentType]="'IP'" [parentCanvas]="parentCanvas" (endDrag)="onEndDrag($event)">
+                            <img src="{{ipUrl}}" id="img-ip" />
+                            <label>Inlet Plenum</label>
+                            <div class="" style="z-index: 10000; position:absolute;" *appDraggableHelper>
+                                <img src="{{ipUrl}}" id="img-ip" />
+                            </div>
+
+                        </div>
+                        <div class="col-xs-4">
+                            <img src="{{dpUrl}}" />
+                            <label>Discharge Plenum</label>
+                        </div>
+                        <div class="col-xs-2">
+                            <img src="{{turningUrl}}" />
+                            <label>Turning Plenum</label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel5">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseFive">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Energy Recovery</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseFive">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <img src="{{plateUrl}}" />
+                            <label>Plate Heat Exchanger</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <img src="{{heatWheelUrl}}" />
+                            <label>Heat Wheel</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel6">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseSix">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Access</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseSix">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src="{{accessDoorUrl}}" />
+                            <label>Door</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel7">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseSeven">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Openings</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseSeven">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img src="{{openingUrl}}" />
+                            <label>Opening</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel8">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseEight">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Shipping Splits</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseEight">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="radio">
+                                <input id="actual" type="radio" name="airData" value="actual">
+                                <label for="actual">Shipping Splits</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel9">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseNine">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Lights/Outlets</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseNine">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="radio">
+                                <input id="actual" type="radio" name="airData" value="actual">
+                                <label for="actual">Lights/Outlets</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary" id="Panel10">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseTen">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">FMED</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseTen">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="radio">
+                                <input id="actual" type="radio" name="airData" value="actual">
+                                <label for="actual">FMED</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="panel panel-primary" id="Panel11">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#stackPanel" href="#stackCollapseEleven">
+                <div class="panel-title">
+                    <span style="cursor:pointer;">Cabinet</span>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="stackCollapseEleven">
+                <div class="panel-body scroll">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <p id='demo'><input type="image" src="{{cabinetUrl}}" (click)="showunitTabs()"></p>
+                            <label>Cabinet</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+</nav>

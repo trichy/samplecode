@@ -1,0 +1,16 @@
+<div class="panel panel-default outer-panel">
+
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+        <h3 class="modal-title" id="myModalLabel">Specifications list</h3>
+    </div>
+
+    <div class="panel-body" style="padding-bottom: 16px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <idGridTable #gridResult [idTable]="'myTable'" [primaryId]="model.primaryId" [dataSource]="model.dataSource" [columns]="model.columns" [showGrid]="show"></idGridTable>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer more-options-footer popout-footer"><button class="btn btn-custom secondary text-upper-bold btn-apply" (click)="btnChooseSpecificationClicked()">Choose Specification</button></div>
+</div>

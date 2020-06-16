@@ -1,0 +1,169 @@
+﻿
+.label-box {
+    margin-bottom: 5px;
+    align-self: center;
+    text-align: right;
+}
+
+.value-box {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+span input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.validCheckBox {
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    top: 2px;
+}
+
+.filter_boxStyle .checkbox {
+    margin-top: 1px;
+    padding-left: 10px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+span input[type="checkbox"][disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.form-control.range, .form-control.type, .form-control.spare {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.allowance_textBox input {
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.allowance_textBox {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.velocity_textBox {
+    width: 100%;
+    margin-left: 4px;
+}
+
+.allowance_textBox input, .velocity_textBox, .qty_textBox input {
+    height: 20px;
+}
+
+.qty_textBox input {
+    width: 50%;
+    margin-left: 5px;
+    padding: 0px 5px;
+}
+
+.qty_textBox {
+    display: inline-block;
+    float: right;
+    width: 70px;
+    text-align: center;
+}
+
+.qty label {
+    margin-right: 5px
+}
+
+.filter_style label {
+    float: right;
+    margin-right: 5px;
+}
+
+.filter_gauge h3 {
+    padding-left: 15px;
+}
+
+.filter_gauge {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-right: 5px;
+}
+
+.type_rowBox {
+    margin-bottom: 15px;
+}
+
+.filter_access h4 {
+    text-align: center
+}
+
+.filter_access {
+    margin-top: 30px;
+}
+
+.form-control.spare {
+    width: 60%;
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0 5px;
+}
+
+.form-control.type {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.form-control.range {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.faceVelocity {
+    margin-left: 4px;
+}
+
+.filter_boxStyle {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.dirty_box {
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+label.shift_style {
+    float: right;
+}
+
+.shift_text {
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+.shift_selectBox {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.shift_rangeBox {
+    padding-left: 4px;
+    padding-right: 0px;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}

@@ -1,0 +1,21 @@
+﻿<div class="panel panel-default outer-panel">
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+        <h3 class="modal-title" id="designAssist">Design Assist</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <idGridTable #gridResult [idTable]="'designAssistTable'" [primaryId]="model.primaryId" [dataSource]="model.dataSource" [columns]="model.columns" [showGrid]="show" [features]="model.features">
+                </idGridTable>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" name="" id="" class="btn btn-custom" (click)="done()">OK</button>
+    </div>
+
+</div>
+

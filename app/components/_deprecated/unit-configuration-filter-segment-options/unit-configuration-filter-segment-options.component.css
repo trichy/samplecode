@@ -1,0 +1,37 @@
+﻿
+.shift_depth {
+    padding-left: 0px;
+    padding-right: 4px;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+    margin-left: -20px;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}
+
+
+.jci-segment-combobox
+{
+    margin-left: -15px;
+}
+
+.jci-label-variable-core {
+    margin-left: 30px;
+}
+
+.jci-label-variable-up {
+    margin-left: 25px;
+}
+
+.jci-label-variable-down {
+    margin-left: 20px;
+}
+
+.total-text {
+    width: 61px;
+    text-align: center;
+}

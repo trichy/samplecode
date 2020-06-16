@@ -1,0 +1,56 @@
+/*.outer-panel {
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 3px 3px;
+}
+
+    .outer-panel .panel-heading {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }*/
+
+
+.border-top {
+    border-top: 1px solid #ccc;
+    box-shadow: 0px 24px 3px -24px  #ccc;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-checkbox {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.criteria-box {
+    margin: 0 10px 10px 10px;
+}
+
+.criteria-header {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.flex-checkbox label {
+    text-align: left;
+    margin-left: 2px;
+}
+
+.flex-checkbox input {
+    position: relative;
+}
+
+.margin-right {
+    margin-right:1px;
+}
+
+.jci-invalid {
+   border: 1px solid #de3b21 !important;
+}

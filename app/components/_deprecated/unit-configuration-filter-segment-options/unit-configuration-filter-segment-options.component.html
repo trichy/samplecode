@@ -1,0 +1,193 @@
+﻿<div class="row">
+    <div class="col-xs-6  shift_depth leftBoxSize" >
+        <div class="row">
+            <div class="col-xs-6"> <label style="float: right;"> Drain Type: </label></div>
+            <div class="col-xs-6" style="margin-left:-7px;">
+                <combobox-drainpan-coating [producttype]="drainpan.Opening.Unit.ProductType"
+                                           [brandoption]="drainpan.Opening.Unit.UnitOptions.BrandOption"
+                                           [enabled]="false"
+                                           [overridestyle]="'margin-left:-20px;'"
+                                           [(ngModel)]="drainpan.DrainPanType">
+                </combobox-drainpan-coating>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-6 rightBoxSize">
+         <div class="row"> 
+            <div class="col-xs-6"> <label style="float: right;">Material: </label></div>
+            <div class="col-xs-6"  style="margin-left:-15px;">
+                <combobox-material-type [producttype]="drainpan.Opening.Unit.ProductType"
+                                        [brandoption]="drainpan.Opening.Unit.UnitOptions.BrandOption"
+                                        [materialclassificationtype]="materialclassificationtype" 
+                                        [enabled]="false"
+                                        [overridestyle]="'min-width: 150px; margin-left:-10px;'"
+                                        [(ngModel)]="drainpan.LinerMaterialType">
+                </combobox-material-type>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-6 shift_depth leftBoxSize">
+        <div class="row">
+            <div class="col-xs-6"> <label style="float: right;">Coating:</label></div>
+            <div class="col-xs-6" style="margin-left:-7px;">
+                <combobox-drainpan-coating [producttype]="drainpan.Opening.Unit.ProductType"
+                                           [brandoption]="drainpan.Opening.Unit.UnitOptions.BrandOption" [enabled]="false"
+                                           [overridestyle]="'margin-left:-20px;'"
+                                           [(ngModel)]="drainpan.LinerCoatingType">
+                </combobox-drainpan-coating>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 rightBoxSize">
+        <div class="row">
+            <div class="col-xs-6"> <label style="float: right;">Connection Location: </label></div>
+            <div class="col-xs-6" style="margin-left:-25px;">
+                 <combobox-drainpan-connection-side [producttype]="drainpan.Opening.Unit.ProductType"
+                                                   [brandoption]="drainpan.Opening.Unit.UnitOptions.BrandOption" [enabled]="false"
+                                                   [(ngModel)]="drainpan.ConnectionSide">
+                </combobox-drainpan-connection-side>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row  filter-header">
+    <div class="col-xs-7">
+        <div class="row">
+            <div class="col-xs-10"><h3 class="filter-label labelleft">Variable Length</h3></div>
+        </div>
+    </div>
+
+    <div class="row" style="border-bottom: 1px solid #ccc; width:96%; margin-bottom: 15px; margin-left:10px;">
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <label>  <strong>Core Length </strong>   </label>
+        </div>
+        <div class="col-xs-4">
+            <label style="margin-left: 5%">  <strong>Downstream Growth</strong>   </label>
+        </div>
+        <div class="col-xs-4">
+            <label>  <strong>Upstream Growth</strong>   </label>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core"> Default:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left:-10px;">
+            <spinner [Id]="'coreDefault'" 
+                     [(ngModel)]="coreDefault"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width"
+                     [Disabled]="'true'"
+                     [Show]="showSpinner">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down">   Default:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <spinner #downDefaultCtrl [Id]="'downDefault'"
+                     [(ngModel)]="downDefault"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width" 
+                     [Disabled]="true" 
+                     [Show]="showSpinner">
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up"> Default:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <spinner #upDefaultCtrl [Id]="'upDefault'"                    
+                     [(ngModel)]="upDefault"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width"
+                     [Disabled]="true" 
+                     [Show]="showSpinner">
+
+            </spinner>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom:10px">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core">  Addition:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left:-10px;">
+            <spinner  [Id]="'coreAddition'"
+                     [(ngModel)]="coreAddition"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width"    
+                     [Disabled]="'true'"                     
+                     [Show]="showSpinner">
+
+            </spinner>
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down">  Addition: </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <spinner #downAdditionCtrl [Id]="'downAddition'" 
+                     [(ngModel)]="downAddition"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width"                   
+                     [Show]="showSpinner">
+
+            </spinner>
+
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up">  Addition:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <spinner #upAdditionCtrl [Id]="'upAddition'" 
+                     [(ngModel)]="upAddition"
+                     [Min]="sppinerCfg.Min"                   
+                     [Max]="sppinerCfg.Max"
+                     [Step]="sppinerCfg.Step"                    
+                     [Width]="sppinerCfg.Width" 
+                     [Show]="showSpinner">
+
+            </spinner>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2">
+            <label class="jci-label-variable-core">  Total:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left:-10px;">
+            <input type="number"  class="total-text"   value="{{coreAddition + coreDefault}}" readonly />
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-down"> Total: </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <input type="number"  class="total-text"  value="{{totalDown}}" readonly />
+        </div>
+        <div class="col-xs-2">
+            <label class="jci-label-variable-up">  Total:  </label>
+        </div>
+        <div class="col-xs-2" style="margin-left: -20px;">
+            <input type="number" class="total-text"   value="{{totalUp}}" readonly />
+        </div>
+    </div>
+</div>
+
+
+

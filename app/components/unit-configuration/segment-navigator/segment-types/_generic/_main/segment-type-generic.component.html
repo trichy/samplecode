@@ -1,0 +1,154 @@
+﻿<div class="row tabs-left">
+    <div class="col-xs-12 navTabs">
+        <ul class="nav nav-tabs filter_tab">
+            <li [class.active]="tabSelected === 1"
+                (click)="selectedTab(1)">
+                <a href="#segment-options_{{segment.id.toString()}}"
+                   data-toggle="tab">
+                    Segment Options
+                </a>
+            </li>
+            <li [class.active]="tabSelected === 2"
+                (click)="selectedTab(2)">
+                <a href="#access-options_{{segment.id.toString()}}"
+                   data-toggle="tab">
+                    Access Options
+                </a>
+            </li>
+            <li [class.active]="tabSelected === 3"
+                (click)="selectedTab(3)">
+                <a href="#const-overrides_{{segment.id.toString()}}"
+                   data-toggle="tab">
+                    Construction Overrides
+                </a>
+            </li>
+            <li [class.active]="tabSelected === 4"  
+                *ngIf="showOpeningOptions()"
+                (click)="selectedTab(4)">
+                <a href="#oppening-options_{{segment.id.toString()}}"
+                   data-toggle="tab">
+                    Opening Options
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content col-xs-12">
+        <div id="segment-options_{{segment.id.toString()}}"
+             [class.active]="tabSelected === 1"
+             class="tab-pane">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-generic [segment]="segment">
+                            </segment-header-generic>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 filter_boxStyle">
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <segment-options [segment]="segment">
+                            </segment-options>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="access-options_{{segment.id.toString()}}"
+             [class.active]="tabSelected === 2"
+             class="tab-pane">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-generic [segment]="segment">
+                            </segment-header-generic>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 filter_boxStyle">
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <access-options [segment]="segment">
+                            </access-options>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="const-overrides_{{segment.id.toString()}}" class="tab-pane"
+             [class.active]="tabSelected === 3">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-generic [segment]="segment">
+                            </segment-header-generic>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 filter_boxStyle">
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-5 col-sm-5 border-right filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline"></div>
+                        </div>
+                        <div class="row">
+                            <construction-overrides [segment]="segment">
+                            </construction-overrides>
+                        </div>
+                    </div>
+                    <div class="col-xs-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="oppening-options_{{segment.id.toString()}}" class="tab-pane" 
+             [class.active]="tabSelected === 4"     *ngIf="showOpeningOptions()">
+            <div class="container-fluid">
+                <div class="row filter-header">
+                    <div class="col-xs-5 padding_left_0 padding_right_0 border_left ">
+                        <div class="col-xs-12 filter_boxStyle">
+                            <segment-header-generic [segment]="segment" [showPencil]="false">
+                            </segment-header-generic>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 filter_boxStyle">
+                      
+                    </div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-xs-12 col-sm-12  filter-depth">
+                        <div class="row">
+                            <div class="form-group display-inline">
+                                    <opening-options [segment]="segment" [show]="showGrid"></opening-options>
+                            </div>
+                        </div>
+                        <div class="row">
+                          
+                        </div>
+                    </div>
+                    <!--<div class="col-xs-7">
+                    </div>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

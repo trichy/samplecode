@@ -1,0 +1,22 @@
+﻿<grid-layout>
+    <row-definition-container>
+        <row-definition height="auto"></row-definition>
+    </row-definition-container>
+    <column-definition-container>
+        <column-definition width="auto"></column-definition>
+        <column-definition width="*"></column-definition>
+    </column-definition-container>
+
+    <div grid-cell
+         grid-row="1"
+         grid-column="1"
+         style="text-align:right; align-self:center; margin-left:5px; font-weight:bold">
+        Working Unit:
+    </div>
+    <div grid-cell
+         grid-row="1"
+         grid-column="2"
+         style="text-align:left; align-self:center; margin-left:5px; font-weight:bold; color:green;">
+        {{ Caption }}
+    </div>
+</grid-layout>

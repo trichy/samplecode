@@ -1,0 +1,101 @@
+﻿
+<pannel [title]="'General Options'" [controlName]="'GeneralOptions'" [Collapse]='GeneralShow' (change)='showPanel2($event)'>
+	<div class="panel-body">
+		<div class="col-xs-6">
+			<div class="form-group">
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Dual Fan Separation Wall</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Isolation Damper Actuator</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Motor Removal Rail</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1" checked>
+					<label>Fan Inlet Screen</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Fan Cage</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Inertia Base*</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label>Structural Steel Base</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="form-group">
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+                    <label>Inverter Drive Balancing (Sweep Balance) </label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label> Fan Balancing </label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label> Scroll Access Door</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1" checked>
+					<label> Fan AFMS ( Transducer Not Included )</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1" checked>
+					<label> Shaft Grounding Ring</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label> Insulated Fan Enclosure</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" value="1">
+					<label> Fan Stand</label>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--<div class="panel-footer more-options-footer"><a href="javascript:void(0);" (click)="onFansAccordionShowMoreOptionsClicked()">{{fansAccordionFooterText}}</a></div>-->
+
+</pannel>
+<pannel [title]="'Belt Drive Options'" [controlName]="'BeltDriveOptions'" [Collapse]='BeltShow' (change)='showPanel1($event)'>
+	<div class="panel-body">
+		<div class="form-group">
+			<div class="radio">
+				<input type="radio" value="1" name="radioFanBearings">
+				<label>Adjustable Belt Drive</label>
+			</div>
+			<div class="radio">
+				<input type="radio" value="1" name="radioFanBearings">
+				<label>Fixed Belt Drive</label>
+			</div>
+			<div style="border-bottom: 1px solid; color:lightgray"></div>
+			<div class="checkbox">
+				<input type="checkbox" value="1">
+				<label>Spare Belts</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" value="1">
+				<label>Multiple Belts</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" value="1">
+				<label>OSHA Belt Gaurd</label>
+			</div>
+		</div>
+
+
+	</div>
+</pannel>

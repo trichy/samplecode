@@ -1,0 +1,70 @@
+﻿<div *ngIf="showCabinetView">
+    <!--<div class="col-xs-12 segNameNav" *ngIf="tabView === '0' && _selectedPath">
+        <ul class="nav nav-tabs">
+            <li id="tab_{{segment.model.id.toString()}}" *ngFor="let segment of _selectedPath.segmentList; let i = index"
+                [class.active]="segment.model.id.equals(_selectedSegment.id)"
+                (click)="selectedTab(i)">
+                <a href="#{{ segment.model.id.toString() }}"
+                   data-toggle="tab" *ngIf="segment.isSelected">
+                    {{ segment.segmentTypeDescription.toString() }}
+                </a>
+            </li>
+        </ul>
+    </div>-->
+
+    <!--<div class="col-xs-2 segNameNav">-->
+        <!--<ul class="nav nav-tabs">
+        <li id="airpath_{{i}}" style="width:100%" *ngFor="let airpath of _unit.airPathList; let i=index">
+
+
+            <a href="#" data-toggle="tab">
+                {{airpath.model.airPathName}}
+            </a>
+        </li>
+    </ul>-->       
+    <!--</div>-->
+    <div class="col-xs-2 no-padding-margin" >
+        <airpath-display [unit]="_unit"></airpath-display>
+        </div>
+
+    <div class="row tabs-left hor">
+        <div class="col-xs-5 navTabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item active filter_tab">
+                    <a class="cabinet-construction" data-toggle="tab" href="#tab1">Construction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="cabinet-coilOptions" data-toggle="tab" href="#tab2">Coil Options</a>
+                </li>
+                <li class="nav-item">
+                    <a class="cabinet-fanOptions" data-toggle="tab" href="#tab3">Fan Options</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="col-xs-11 nav-border-height">
+                <div class="tab-content">
+                    <div id="tab1" class="container tab-pane active">
+                        <app-construction [unit]="_unit"></app-construction>
+                    </div>
+                    <div id="tab2" class="container tab-pane fade">
+
+                        <div class="checkbox checkbox-inline">
+                            <input id="checkbox-inline-1" type="checkbox">
+                            <label style="padding-right:200px" for="checkbox-inline-1">Tube Thickness</label>
+                        </div>
+                    </div>
+                    <div id="tab3" class="container tab-pane fade">
+                        <br>
+                        <p>Fans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <br />
+            <div class="tab-content border-top grid-margin">
+                <tunnel-selection [unit]="_unit"></tunnel-selection>
+            </div>
+        </div>
+    </div>
+</div>

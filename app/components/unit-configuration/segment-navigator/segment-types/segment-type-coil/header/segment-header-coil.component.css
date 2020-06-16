@@ -1,0 +1,215 @@
+﻿
+.row-left {
+    margin-left: -5px;
+    margin-top: -3.8rem;
+}
+
+.divborder {
+    margin-left: -15px;
+    margin-top: 12px;
+    border-right: 1px solid #ccc;
+}
+
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+    margin-top: 40px;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: none;
+    padding: 1px 4px;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    display: block;
+}
+
+.tabs-left > .nav-tabs > li {
+    float: none;
+    padding-left: 0px;
+}
+
+    .tabs-left > .nav-tabs > li > a {
+        min-width: 74px;
+    }
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 19px;
+    /*border-right: 1px solid #ddd;*/
+}
+
+    .tabs-left > .nav-tabs > li > a {
+        margin-right: -1px;
+        padding: 12px 6px;
+    }
+
+        .tabs-left > .nav-tabs > li > a:hover,
+        .tabs-left > .nav-tabs > li > a:focus {
+            border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+        }
+
+    .tabs-left > .nav-tabs .active > a,
+    .tabs-left > .nav-tabs .active > a:hover,
+    .tabs-left > .nav-tabs .active > a:focus {
+        border-color: #ddd transparent #ddd #ddd;
+        *border-right-color: #ffffff;
+    }
+
+.tabs-left .tab-content {
+    margin-left: 140px;
+}
+
+.tabs-left > ul > li.active {
+    padding-left: 0px;
+}
+
+/*#flat-filter{
+    border-right: 10px #ccc;
+}*/
+.panel-body {
+    height: 35vh;
+}
+
+.panel-heading-bold {
+    background-color: #ffffff;
+}
+
+.border-top {
+    border-top: 1px solid #ccc;
+}
+
+.border-right {
+    border-right: 1px solid #ccc;
+}
+
+.filter-header {
+    display: flex;
+}
+
+.filter-depth {
+    min-height: 250px;
+}
+
+.no-padding-margin {
+    padding: 0;
+    margin: 0;
+}
+
+.nav.nav-tabs.filter_tab li {
+    padding-left: 0px;
+    width: 100%;
+}
+
+    .nav.nav-tabs.filter_tab li a {
+        padding-left: 4px;
+        padding-right: 2px;
+        padding-bottom: 13px;
+        padding-top: 13px;
+        font-size: 11px;
+        border-color: #ddd;
+    }
+
+.nav-tabs.filter_tab {
+    border-top: 1px solid #cccccc;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.col-xs-2.left_tab {
+    width: 13.1%;
+    margin-top: 42px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top: 2px solid #cccccc; /**/
+    border-left: 1px solid #cccccc;
+    border-top-left-radius: 2px;
+}
+
+    .col-xs-2.left_tab p {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 0px;
+        padding-left: 5px;
+    }
+
+.tab-content.col-xs-10.right_tab {
+    width: 86.9%;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.border_left {
+    border-left: 0px solid #cccccc;
+}
+
+.border_right {
+    border-right: 1px solid #cccccc;
+}
+
+.form-control.filterMedia {
+    width: 64%;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+}
+
+.form-control.filterDepth {
+    padding: 0 3px;
+}
+
+ul.filter_tab li a:first-child {
+    border: none;
+}
+
+.filter_boxStyle {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+label.shift_style {
+    float: right;
+}
+
+.shift_depth {
+    padding-left: 0px;
+    padding-right: 4px;
+}
+
+.shift_depthText {
+    padding-left: 0px;
+    padding-right: 7px;
+}
+
+select.selectBox {
+    width: 101%;
+    margin-left: -1px;
+}
+
+.padding_left_0 {
+    padding-left: 0px;
+}
+
+.padding_right_0 {
+    padding-right: 0px;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}
+
+.editProduct {
+    font-family: 'FontAwesome';
+    font-weight: 100;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 999;
+}
+
+.dialog {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    left: auto;
+    top: 10px;
+    min-height: 200px;
+    width: 100%;
+    padding: 12px;   
+    display:flex;
+}
+
+.close {
+    float: right;
+    margin-right: -45px;
+    margin-top: -33px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+    .close > .fa {
+        font-family: 'FontAwesome';
+        font-weight: 400;
+        background-color: rgba(255, 255, 255, 0.1);
+    }

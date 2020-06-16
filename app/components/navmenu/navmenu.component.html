@@ -1,0 +1,109 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+    <li [routerLinkActive]="['active']" 
+        (click)="tabSelect('Setup')">
+        <a [routerLink]="['/setup']">Setup</a>
+    </li>
+    <li *ngIf="showDebugComponent"
+        [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': '' }"
+        (click)="tabSelect('Debug')">
+        <a [routerLink]="['/debug']">Debug</a>
+    </li>
+    <li [routerLinkActive]="['active']" *ngIf="showCustomerPeferences"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Customer Preferences')">
+        <a [routerLink]="['/customer-preferences']">Customer Preferences</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Specification')">
+        <a [routerLink]="['/specification']">Specification</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Layout')">
+        <a [routerLink]="['/Layout']">Layout</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Unit Selection')">
+        <a [routerLink]="['/unit-selection']">Unit Selection</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Unit Configuration')">
+        <a [routerLink]="['/unit-configuration']">Unit Configuration</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Message')">
+        <a [routerLink]="['/messages']">Messages</a>
+    </li>
+    <li [routerLinkActive]="['active']"
+        [ngClass]="{'disabled': haveUnitConfiguration() === false }"
+        (click)="tabSelect('Unit Summary')">
+        <a [routerLink]="['/unit-summary']">Unit Summary</a>
+    </li>
+
+    <li class="pullright-li">
+
+        <div class="btn-group">
+            <button type="button" id="btnDropDown" class="btn btn-action-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Express Docs <span class="arrow"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-top dropdown-menu-dc">
+                <li>
+                    <a>Submittal</a>
+                    <div class="sub_menu">
+                        <ul class="sub_list">
+                            <li class="subMenuList"><a>Default1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a>Basis of Design</a>
+                    <div class="sub_menu">
+                        <ul class="sub_list">
+                            <li class="subMenuList"><a>Default2</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a>BID</a>
+                    <div class="sub_menu">
+                        <ul class="sub_list">
+                            <li class="subMenuList"><a>Default3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a>BIM</a></li>
+                <li><a>Performance</a></li>
+            </ul>
+        </div>
+
+        <div class="form-group display-inline pull-right">
+            <div class="button-strip">
+                <button _ngcontent-opx-65="" class="btn sg-action-btn" (click)="toggleReturnModal()" data-container="body" data-placement="bottom" data-toggle="tooltip" style="width:53px;height:28px;" title="Return to Estimate">
+                    <i _ngcontent-opx-65="" class="fa fa-reply"></i>
+                </button>
+                <button type="button"
+                        id="btnSave"
+                        class="btn btn-primary"
+                        (click)="onSave()"
+                        [disabled]="haveUnitConfiguration() === false || inProcess === true">
+                    Save Product
+                </button>
+                <modal-dialog id="modalSave" [(visible)]="showModal" style="align-content:center;">
+                    <unit-configuration-save id="unitConfigurationSave" class="col-xs-12 col-lg-8" style="margin:auto;" [modelText]="strModelText" (onClose)="toggleModalView()"></unit-configuration-save>
+                </modal-dialog>
+                
+                <modal-dialog id="modalReturnEstimated" [(visible)]="showReturnModal" style="align-content:center;">
+                    <return-estimate-modal id="returnEstimate" class="col-xs-12 col-lg-8" style="margin:auto;" [modelText]="strModelTextEstimate" (onClose)="returnToEstimate($event)" >
+                    </return-estimate-modal>
+                </modal-dialog>
+            </div>
+        </div>
+
+    </li>
+</ul>

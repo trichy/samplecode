@@ -1,0 +1,37 @@
+.outer-panel {
+
+        max-width: 600px;
+}
+
+    /* .outer-panel .panel-heading {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    } */
+
+.change-up-container {
+    width: 100%;
+    height: 10px;
+}
+
+.change-up {
+    width: 0;
+    height: 0;
+    border-left: 36px solid transparent;
+    border-right: 36px solid transparent;
+    border-bottom: 36px solid #cccccc;
+    position: absolute;
+    z-index: -1;
+    left: 700px;
+}
+
+.btn-apply:hover,
+.btn-apply:focus {
+    color: white;
+}
+
+
+    /*.close > .fa {
+        font-family: 'FontAwesome';
+        font-weight: 400;
+        background-color: rgba(255, 255, 255, 0.1);
+    }*/

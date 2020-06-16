@@ -1,0 +1,25 @@
+﻿<accordion *ngIf="_unit !== null" [closeOthers]="oneAtATime" id="accordion">
+    <accordion-group *ngFor="let airpath of _unit.airPathList; let i=index"
+                     [panelClass]="{'panel-primary' : airpath.isOpenInTunnelNavigator, '': !airpath.isOpenInTunnelNavigator}"
+                     [(isOpen)]="airpath.isOpenInTunnelNavigator" [ngStyle]="panelStyle"
+                     id ="tunnelUI" (click)="showTunnelGroupList(i)">
+        <div class="panel-header jci-panel-heading" [ngClass]="{'jci-panel-heading' : airpath.isOpenInTunnelNavigator, 'jci-panel-heading-collapsed': !airpath.isOpenInTunnelNavigator}" accordion-heading>
+            <span>{{airpath.model.airPathName}}</span>
+        </div>
+        <!--CONTENT-->
+        <div class="tunnel-ui-content" [ngStyle]="contentStyle">
+            <div *ngFor="let segment of airpath.segmentList">
+                <div class="checkbox">
+                    <input id="segment_{{segment.model.id.toString()}}"
+                           type="checkbox" (change)="changeValue($event)"
+                           [(ngModel)]="segment.isSelected" />
+                    <label [style.font-weight]="segment.isSelected ? 'bold' : 'normal'"
+                           for="segment_{{segment.model.id.toString()}}">
+                        {{segment.segmentTypeDescription}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </accordion-group>
+</accordion>
+

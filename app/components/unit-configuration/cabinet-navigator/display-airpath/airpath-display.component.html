@@ -1,0 +1,16 @@
+﻿<div class="col-xs-2 segNameNav">
+        <ul class="nav nav-tabs">
+            <li id="airpath_{{i}}" style="width:100%" *ngFor="let airpath of _unit.airPathList; let i=index">
+                <a href="#" data-toggle="tab">
+                    {{airpath.model.airPathName}}
+                </a>
+            </li>
+        </ul>
+</div>
+<!--<div class="col-xs-2 filter-wapper-M">
+    <div>
+        <ul class="tabs">
+            <li style="padding:10px" *ngFor="let airpath of _unit.airPathList; let i=index"> {{airpath.model.airPathName}}</li>
+        </ul>
+    </div>
+</div>-->

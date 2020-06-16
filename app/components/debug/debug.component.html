@@ -1,0 +1,91 @@
+﻿<div class="container"
+     style="margin: 0px; margin-top: 5px; padding: 0px; width: 100%;">
+    <label style="font-weight:bold;">
+        Session ID:
+    </label>
+    <div id="sessionid"
+         class="input-group"
+         style="width: 100%;">
+        <div *ngIf="hasSessionID()"
+             class="input-group-btn">
+            <button class="btn btn-default"
+                    type="button"
+                    (click)="copySessionID($event)">
+                Copy
+            </button>
+        </div>
+        <input #sessionid
+               type="text"
+               class="form-control"
+               style="background-color: white; color: black; font-weight:bold; opacity: 1; height:26.8px;"
+               value="{{ getSessionID() }}"
+               readonly />
+    </div>
+
+    <label style="font-weight:bold; margin-top: 15px;">
+        Ticket:
+    </label>
+    <div id="ticket"
+         class="input-group"
+         style="width: 100%;">
+        <div *ngIf="hasAuthenticationTicket()"
+             class="input-group-btn">
+            <button class="btn btn-default"
+                    type="button"
+                    [disabled]="!_ready"
+                    (click)="copyAuthenticationTicket($event)">
+                Copy
+            </button>
+        </div>
+        <input #ticket
+               type="text"
+               class="form-control"
+               style="background-color: white; color: black; font-weight:bold; opacity: 1; height:26.8px;"
+               value="{{ getAuthenticationTicket() }}"
+               readonly />
+    </div>
+
+    <label style="font-weight:bold; margin-top: 15px;">
+        Item ID:
+    </label>
+    <div id="itemid"
+         class="input-group"
+         style="width: 100%;">
+        <div *ngIf="hasItemID()"
+             class="input-group-btn">
+            <button class="btn btn-default"
+                    type="button"
+                    (click)="copyItemID($event)">
+                Copy
+            </button>
+        </div>
+        <input #itemid
+               type="text"
+               class="form-control"
+               style="background-color: white; color: black; font-weight:bold; opacity: 1; height:26.8px;"
+               value="{{ getItemID() }}"
+               readonly />
+    </div>
+
+    <hr style="margin-top: 35px;"/>
+
+    <label style="font-weight:bold; margin-top: 15px;">
+       Load From Existing Session:
+    </label>
+    <div id="loadfrom_sesssionid"
+         class="input-group"
+         style="width: 100%;">
+        <div class="input-group-btn">
+            <button class="btn btn-warning"
+                    type="button"
+                    (click)="loadFromSessionID_OnClick($event)">
+                Load
+            </button>
+        </div>
+        <input #loadfrom_sessionid
+               type="text"
+               class="form-control"
+               style="background-color: white; color: black; font-weight:bold; opacity: 1; height:26.8px;"
+               [(ngModel)]="loadFrom_SessionID" />
+    </div>
+</div>

@@ -1,0 +1,236 @@
+﻿body {
+    /* set to 0 for salesforce; otherwise padding and margin look good */
+    padding: 0;
+    margin: 0;
+    /*padding: 40px;
+    margin: 40px;*/
+}
+
+.loader-holder {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+    .loader-holder .block {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+.btn-action-custom {
+    min-height: 24px;
+    /* width: 45px; */
+    height: 24px;
+    /*font-size: 18px;*/
+    /*color: #232323;*/
+    color: #121212;
+    border: 1px solid #cccccc;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: inherit;
+    border-radius: 2px;
+    outline: 0;
+    background-color: #fff;
+    padding: 0;
+}
+
+    .btn-action-custom:hover,
+    .btn-action-custom .fa:hover {
+        color: #1375cf;
+    }
+
+.button-strip {
+    display: inline-flex !important;
+}
+
+    .button-strip button {
+        margin-left: 3px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+        .button-strip button .fa {
+            margin-right: 6px;
+        }
+
+            .button-strip .btn:hover,
+            .button-strip button .fa:hover {
+                /*color: #1375cf;*/
+                color: #121212;
+            }
+
+            .button-strip .btn:focus,
+            .button-strip .btn.focus,
+            .button-strip button .fa :focus {
+                /*color: #1375cf;*/
+                color: #121212;
+            }
+
+.fa-no-text {
+    margin-right: 0px !important;
+}
+
+.special-quotes {
+    font-size: 14px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+
+.special-quotes-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    background: red;
+    display: inline-block;
+}
+
+.tab-content.bordered {
+    padding-top: 12px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.more-options-footer {
+    border-top: none;
+    text-align: right;
+    margin-bottom: 9px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.panel-heading-icon {
+    color: white;
+    margin-left: 6px;
+    font-size: 12px !important;
+}
+
+.checkbox-group-title {
+    margin-bottom: 0px !important;
+}
+
+.switch-container {
+    margin-top: 10px;
+}
+
+.select-inline {
+    min-width: 150px;
+    display: inline;
+}
+
+.display-inline label {
+    min-width: 100px;
+    text-align: right;
+}
+
+.panel-heading-collapse-expand {
+    color: white;
+    font-size: 16px !important;
+    margin-top: -1px;
+    line-height: 0px;
+    cursor: pointer;
+    height: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.panel-heading-bold {
+    font-weight: bold;
+    color: #222 !important;
+}
+
+.text-upper-bold {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.text-align-left-narrow {
+    text-align: left !important;
+    min-width: 80px !important;
+}
+
+.text-align-left-mid {
+    text-align: left !important;
+    min-width: 125px !important;
+}
+
+.text-align-left-wide {
+    text-align: left !important;
+    min-width: 170px !important;
+}
+
+.close-modal {
+    font-weight: normal;
+    color: #232323;
+    cursor: pointer;
+}
+
+.open-panel {
+    transform: rotate( 180deg );
+    transition: transform 300ms ease;
+}
+
+.close-panel {
+    transform: rotate( 0deg );
+    transition: transform 300ms ease;
+}
+
+.popout-footer {
+    margin-bottom: 20px;
+}
+
+/*Modal Style*/
+.outer-panel {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 3px 3px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+    outline: 0;
+    height: auto;
+    margin: auto;
+}
+
+.close > .fa {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+spinner .ui-spinner-disabled,
+spinner .ui-state-disabled {
+    pointer-events: none;
+}
+
+.nav-tabs > li:first-child {
+    padding-left: 0px;
+}
+
+
+
+/*Tunnel Navigation */
+
+#tunnelUI .panel-title {
+    width:100%;
+}
+
+
+
+.property_header_cell_expander {
+    display: none !important;
+}

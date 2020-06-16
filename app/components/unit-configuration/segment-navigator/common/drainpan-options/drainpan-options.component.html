@@ -1,0 +1,82 @@
+﻿<div *ngIf="drainpan !== null"
+     class="row">
+    <div class="col-xs-6  shift_depth leftBoxSize">
+        <div class="row">
+            <div class="col-xs-6"> 
+                <label style="float: right;"> 
+                    Drain Type: 
+                </label></div>
+            <div class="col-xs-6" 
+                 style="margin-left:-7px;">
+                <combobox-drainpan-type [producttype]="drainpan.unit.productType"
+                                        [brandoption]="drainpan.unit.unitOptions.brandOption"
+                                        [enabled]="false"
+                                        [overridestyle]="'margin-left:-20px;'"
+                                        [(ngModel)]="drainpan.drainPanType">
+                </combobox-drainpan-type>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 rightBoxSize">
+        <div class="row">
+            <div class="col-xs-6"> 
+                <label style="float: right;">
+                    Material: 
+                </label>
+            </div>
+            <div class="col-xs-6" 
+                 style="margin-left:-15px;">
+                <combobox-material-type-drainpan-liner [producttype]="drainpan.unit.productType"
+                                                       [brandoption]="drainpan.unit.unitOptions.brandOption"
+                                                       [enabled]="false"
+                                                       [overridestyle]="'min-width: 150px; margin-left:-10px;'"
+                                                       [(ngModel)]="drainpan.linerMaterialType">
+                </combobox-material-type-drainpan-liner>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div *ngIf="drainpan !== null"
+     class="row">
+    <div class="col-xs-6 shift_depth leftBoxSize">
+        <div class="row">
+            <div class="col-xs-6"> 
+                <label style="float: right;">
+                    Coating:
+                </label>
+            </div>
+            <div class="col-xs-6" 
+                 style="margin-left:-7px;">
+                <combobox-drainpan-coating [producttype]="drainpan.unit.productType"
+                                           [brandoption]="drainpan.unit.unitOptions.brandOption" [enabled]="false"
+                                           [overridestyle]="'margin-left:-20px;'"
+                                           [(ngModel)]="drainpan.linerCoatingType">
+                </combobox-drainpan-coating>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 rightBoxSize">
+        <div class="row">
+            <div class="col-xs-6">
+                <label style="float: right;">
+                    Connection Location: 
+                </label>
+            </div>
+            <div class="col-xs-6" 
+                 style="margin-left:-25px;">
+                <combobox-drainpan-connection-side [producttype]="drainpan.unit.productType"
+                                                   [brandoption]="drainpan.unit.unitOptions.brandOption" [enabled]="false"
+                                                   [(ngModel)]="drainpan.connectionSide">
+                </combobox-drainpan-connection-side>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="drainpan === null"
+     class="row">
+    <div class="col-xs-12">
+        <h3 style="margin-top: 0px">No Drain Pan On Segment</h3>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="panel panel-default outer-panel modal-success">
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+		<h3 class="modal-title" id="myModalLabel">{{modelText}} saved</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-2">
+                <i class="fa fa-check-circle" aria-hidden="true" style="color: #63bf38;  font-size: 50px; width: 100px;"></i>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">Your configuration has been saved, what's next?</div>
+                <div class="row flex-container" style="margin:10px;">
+                    <button type="button" name="" id="" class="btn btn-custom" (click)="btnSaveClicked()">Continue</button>
+                    <button type="button" name="" id="" class="btn btn-custom">Return to Estimate</button>
+                </div>
+                <div class="row flex-container"> <button type="button" name="" id="" class="btn btn-custom">Add New Air Handler</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer more-options-footer popout-footer">
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿<segment-type-coil *ngIf="isCoilSegment()" (deleteSegment)="deleteSegment.next($event)"
+                   [segment]="segment">
+
+</segment-type-coil>
+<segment-type-fan *ngIf="isFanSegment()" (deleteSegment)="deleteSegment.next($event)"
+                  [segment]="segment">
+</segment-type-fan>
+<segment-type-filter *ngIf="isFilterSegment()" (deleteSegment)="deleteSegment.next($event)"
+                     [segment]="segment">
+</segment-type-filter>
+
+<segment-type-generic *ngIf="isGenericSegment()"
+                      [segment]="segment" (deleteSegment)="deleteSegment.next($event)">
+</segment-type-generic>

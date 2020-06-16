@@ -1,0 +1,100 @@
+
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+    margin-top: 40px;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: none;
+    padding: 1px 6px;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    display: block;
+}
+
+.tabs-left > .nav-tabs > li {
+    float: none;
+}
+
+    .tabs-left > .nav-tabs > li > a {
+        min-width: 74px;
+    }
+
+.tabs-left > .nav-tabs {
+    float: left;
+    margin-right: 19px;
+    /*border-right: 1px solid #ddd;*/
+}
+
+    .tabs-left > .nav-tabs > li > a {
+        margin-right: -1px;
+        padding: 12px 6px;
+    }
+
+        .tabs-left > .nav-tabs > li > a:hover,
+        .tabs-left > .nav-tabs > li > a:focus {
+            border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+        }
+
+    .tabs-left > .nav-tabs .active > a,
+    .tabs-left > .nav-tabs .active > a:hover,
+    .tabs-left > .nav-tabs .active > a:focus {
+        border-color: #ddd transparent #ddd #ddd;
+        /**border-right-color: #ffffff;*/
+    }
+
+.tabs-left .tab-content {
+    margin-left: 140px;
+}
+
+.tabs-left > ul > li.active {
+    padding-left: 0;
+}
+
+/*#flat-filter{
+    border-right: 10px #ccc;
+}*/
+.panel-body {
+    height: 35vh;
+}
+
+.panel-heading-bold {
+    background-color: #ffffff;
+}
+
+/*.airpressuredrop {
+    border-bottom: 50px #ff0000; ??
+}*/
+
+.sample {
+    border-right: 2px solid #ddd;
+    height: 35vh;
+}
+
+.border-top {
+    border-top: 1px solid #ccc;
+}
+
+.border-right {
+    border-right: 1px solid #ccc;
+}
+
+.filter-header {
+    display: flex;
+}
+
+.filter-depth {
+    min-height: 250px;
+}
+
+.filter-label {
+    margin-left: -25px;
+}
+
+.no-padding-margin {
+    padding: 0;
+    margin: 0;
+}

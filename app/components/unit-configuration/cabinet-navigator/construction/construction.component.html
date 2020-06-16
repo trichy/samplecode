@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-xs-6">
+        <div class="row nopadding">
+            <div class="col-sm-3">
+                <div class="checkbox">
+                    <input id="std" type="checkbox" value="std" checked>
+                    <label for="std">Standard</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="checkbox">
+                    <input id="custom" type="checkbox" value="custom">
+                    <label for="custom">Custom</label>
+                </div>
+            </div>
+        </div>
+        <div class="row nopadding form-group display-inline">
+            <div class="col-sm-3">
+                <label>AirFlow :</label>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <input class="form-control" type="number"
+                       [ngModel]="airflow"
+                       (ngModelChange)="cabinetValueChange($event)">
+            </div>
+            <div class="col-sm-2">
+                <label style="text-align: left;">(CFM)</label>
+            </div>
+        </div>
+        <div class="row  nopadding form-group display-inline">
+            <div class="col-sm-3">
+                <label>Min Height : </label>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <input type="number"
+                       class="form-control"
+                       name="minCabinetHeight"
+                       id="minCabinetHeight"
+                       [(ngModel)]="_unit.model.unitOptions.minDesignCabHeight"
+                       (ngModelChange)="cabinetValueChange($event)">
+            </div>
+            <div class="col-sm-3">
+                <label>Min Width : </label>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <input type="number"
+                       class="form-control"
+                       name="minCabinetWidth"
+                       id="minCabinetWidth"
+                       [(ngModel)]="_unit.model.unitOptions.minDesignCabWidth"
+                       (ngModelChange)="cabinetValueChange($event)">
+            </div>
+        </div>
+        <div class="row nopadding form-group display-inline">
+            <div class="col-sm-3">
+                <label>Max Height : </label>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <input type="number"
+                       class="form-control"
+                       name="maxCabinetHeight"
+                       id="maxCabinetHeight"
+                       [(ngModel)]="_unit.model.unitOptions.maxDesignCabHeight"
+                       (ngModelChange)="cabinetValueChange($event)">
+            </div>
+            <div class="col-sm-3">
+                <label>Max Width : </label>
+            </div>
+            <div class="col-sm-3 nopadding">
+                <input type="number"
+                       class="form-control"
+                       name="maxCabinetWidth"
+                       id="maxCabinetWidth"
+                       [(ngModel)]="_unit.model.unitOptions.maxDesignCabWidth"
+                       (ngModelChange)="cabinetValueChange($event)">
+            </div>
+        </div>
+    </div>
+</div>

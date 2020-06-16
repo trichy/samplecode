@@ -1,0 +1,98 @@
+
+<div class="panel panel-default outer-panel">
+    
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+        <h3 class="modal-title" id="myModalLabel">Select Category</h3>
+    </div>
+    <div class="panel-body" style="padding-bottom: 0px;">
+        <div class="row" style="padding: 15px;"><p>Select the categories to show/hide in the specification configuration</p></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-bold">
+                        General
+                    </div>
+                    <div class="panel-body" style="height: 300px;">
+                        <toggleSH [header]="'Cabinet'" [showButton]="show" [(ngModel)]="model.general.Cabinet"></toggleSH>
+                        <toggleSH [header]="'Service'" [showButton]="show" [(ngModel)]="model.general.Service"></toggleSH>
+                        <toggleSH [header]="'Electrical'" [showButton]="show" [(ngModel)]="model.general.Electrical"></toggleSH>
+                        <toggleSH [header]="'Testing'" [showButton]="show" [(ngModel)]="model.general.Testing"></toggleSH>
+                        <toggleSH [header]="'Warranty'" [showButton]="show" [(ngModel)]="model.general.Warranty"></toggleSH>
+                        <toggleSH [header]="'Seismic'" [showButton]="show" [(ngModel)]="model.general.Seismic"></toggleSH>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4" style="padding-left: 0px;padding-right: 0px;height: 300px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-bold">
+                        Cooling &amp; Heating
+                    </div>
+                    <div class="panel-body" style="height: 300px;">
+
+                         <toggleSH [header]="'Cooling Coils'" [showButton]="show"  [(ngModel)]="model.coolingHeating.CoolingCoils"  ></toggleSH>
+                        <toggleSH [header]="'Hot water coils'" [showButton]="show" [(ngModel)]="model.coolingHeating.HotWaterCoils"  ></toggleSH>
+                        <toggleSH [header]="'Steam'" [showButton]="show" [(ngModel)]="model.coolingHeating.Steam"  ></toggleSH>
+                        <toggleSH [header]="'Intetgral face &amp; Bypass coils'" [showButton]="show" [(ngModel)]="model.coolingHeating.IntetgralFace"   ></toggleSH>
+                        <toggleSH [header]="'Electric Heat'" [showButton]="show"  [(ngModel)]="model.coolingHeating.ElectricHeat"  ></toggleSH>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-bold">
+                        Miscellaneous
+                    </div>
+                    <div class="panel-body" style="height: 300px;">
+                        <toggleSH [header]="'Standard Dampers'" [showButton]="show" [(ngModel)]="model.miscellaneous.Standard"></toggleSH>
+                        <toggleSH [header]="'Mulit-zone Dampers'" [showButton]="show" [(ngModel)]="model.miscellaneous.MulitZone"></toggleSH>
+                        <toggleSH [header]="'Humidifiers'" [showButton]="show" [(ngModel)]="model.miscellaneous.Humidifiers"></toggleSH>
+                        <toggleSH [header]="'Sound Attenuators'" [showButton]="show" [(ngModel)]="model.miscellaneous.SoundAttenuators"></toggleSH>
+                        <toggleSH [header]="'UV Lights'" [showButton]="show" [(ngModel)]="model.miscellaneous.UvLights"></toggleSH>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="panel panel-default" style="margin-bottom: 0px;">
+                    <div class="panel-heading panel-heading-bold">
+                        Fans
+                    </div>
+                    <div class="panel-body" style="height: 160px;">
+                        <toggleSH [header]="'Fans'" [showButton]="show" [(ngModel)]="model.fans.fans"></toggleSH>
+                        <toggleSH [header]="'Fans Motors'" [showButton]="show" [(ngModel)]="model.fans.fansMotors"></toggleSH>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4" style="padding-left: 0px;padding-right: 0px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-bold">
+                        Energy Recovery
+                    </div>
+                    <div class="panel-body" style="height: 160px;">
+                        <toggleSH [header]="'Energy Wheel'" [showButton]="show" [(ngModel)]="model.energy.Wheel"></toggleSH>
+                        <toggleSH [header]="'Air to Air heat Exchanger'" [showButton]="show" [(ngModel)]="model.energy.AirToAir"></toggleSH>
+                        <toggleSH [header]="'Electric Heat'" [showButton]="show" [(ngModel)]="model.energy.Electric"></toggleSH>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-bold">
+                        Filters
+                    </div>
+                    <div class="panel-body" style="height: 160px;">
+                        <toggleSH [header]="'Low Efficiency Filters'" [showButton]="show" [(ngModel)]="model.filters.Low"></toggleSH>
+                        <toggleSH [header]="'High-Efficiency Filters'" [showButton]="show" [(ngModel)]="model.filters.High"></toggleSH>
+                        <toggleSH [header]="'HEPA Filters'" [showButton]="show" [(ngModel)]="model.filters.HEPA"></toggleSH>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer more-options-footer popout-footer"><button class="btn btn-custom secondary text-upper-bold btn-apply" (click)="btnApplyChangesClicked()">Apply Changes</button></div>
+</div>

@@ -1,0 +1,212 @@
+﻿<div class="row tabs-left row-left">
+	<div class="col-xs-2 left_tab">
+		<ul class="nav nav-tabs filter_tab">
+			<li [class.active]="tabSelected === 1"
+				[class.disabled]="tabSelected !== 1"
+				(click)="selectedTab(1)">
+				<a href="#filter-options" data-toggle="tab">Filter Options</a>
+			</li>
+			<li [class.active]="tabSelected === 2"
+				[class.disabled]="tabSelected !== 2"
+				(click)="selectedTab(2)">
+				<a href="#segment-options" data-toggle="tab">Segment Options</a>
+			</li>
+			<li [class.active]="tabSelected === 3"
+				[class.disabled]="tabSelected !== 3"
+				(click)="selectedTab(3)">
+				<a href="#access-options" data-toggle="tab">Access Options</a>
+			</li>
+			<li [class.active]="tabSelected === 4"
+				[class.disabled]="tabSelected !== 4"
+				(click)="selectedTab(4)">
+				<a href="#const-overrides" data-toggle="tab">Construction Overrides</a>
+			</li>
+			<!--<li [class.active]="tabSelected === 5"
+				class="disabled">
+				<a href="#const-overrides" data-toggle="tab">Variable Length</a>
+			</li>-->
+		</ul>
+	</div>
+	<div class="tab-content col-xs-10 right_tab">
+		<div class="tab-pane"
+			 [class.active]="tabSelected === 1"
+			 id="filter-options"
+			 style="padding-left: 4px;">
+			<div *ngIf="filterBank !== null" class="container-fluid">
+				<div class="row filter-header" style="margin-top: 8px;">
+					<div class="col-xs-5 filter_boxStyle border_left border_right">
+						<div class="col-xs-12 filter_boxStyle">
+							<div class="col-xs-3">
+								<h3 style="padding-left:15px; margin-top: 10px">
+									{{headerCaption}}
+									<i class="editProduct fa fa-pencil pointer" (click)="toggleModalView()"></i>
+
+									<modal-dialog [(visible)]="showModal">
+										<flat-filter-override id="flatFilterOverride" class="flat-filter-override" [show]="showModal" style="width:100%;"></flat-filter-override>
+									</modal-dialog>
+								</h3>
+							</div>
+							<div class="col-xs-9 filter_boxStyle">
+								<div class="col-xs-12 filter_boxStyle">
+									<h3 style="float: right;padding-right: 10px;margin-top: 10px;">
+										Segment Air Pressure Drop: <span style="margin-left: 5px;">{{apdValueSum}}</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-7 filter_boxStyle">
+						<h3 style="margin-top: 10px;padding-left: 20px;">Filter Arrangements</h3>
+					</div>
+				</div>
+				<div class="row border-top">
+					<div class="col-xs-5  filter-depth border-right" [style.height.px]="viewHeight">
+						<div class="row">
+							<div class="form-group display-inline"></div>
+						</div>
+						<div class="row">
+							<unit-configuration-filter-options [filterbank]="filterBank" (apdValueEvent)="apdValueSumHandler($event)">
+
+							</unit-configuration-filter-options>
+						</div>
+					</div>
+					<div class="col-xs-7">
+						<filter-bank [filterbank]="filterBank"></filter-bank>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="filterBank === null" class="container-fluid">
+				<div class="row filter-header" style="margin-top: 8px;">
+					<div class="col-xs-6 filter_boxStyle border_left">
+						<div class="col-xs-12 filter_boxStyle">
+							<div class="col-xs-6">
+								<h3 style="padding-left:15px; margin-top: 10px">
+									Filter Segment Not Selected
+								</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row border-top"></div>
+			</div>
+		</div>
+		<div id="segment-options" [class.active]="tabSelected === 2" class="tab-pane">
+			<div class="container-fluid">
+				<div class="row filter-header" style="margin-top: 8px;">
+					<div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+						<div class="col-xs-12 filter_boxStyle">
+							<div class="col-xs-3">
+								<h3 style="padding-left:15px; margin-top: 10px">
+									{{headerCaption}} <i class="editProduct fa fa-pencil"></i>
+								</h3>
+							</div>
+							<div class="col-xs-9 padding_left_0 padding_right_0">
+								<!--<div class="col-xs-11 padding_left_0 padding_right_0">
+									<h3 style="float: right;padding-right: 20px;margin-top: 10px;">
+										Calculate
+									</h3>
+								</div>
+								<div class="col-xs-1 filter_boxStyle"
+									 style="margin-left:0; margin-top:5px;">
+									<button class="btn btn-primary"
+											style="float: right; margin-right: 5px;"
+											[disabled]="!enabledBtn"
+											(click)="calculateValue()">
+										<i class="fa fa-refresh" style="color:white;"></i>
+									</button>
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-7 filter_boxStyle">
+						<h3 style="margin-top: 10px;padding-left: 20px;">Filter Arrangements</h3>
+					</div>
+				</div>
+				<div class="row border-top">
+					<div class="col-xs-5 col-sm-5 border-right filter-depth">
+						<div class="row">
+							<div class="form-group display-inline"></div>
+						</div>
+						<div class="row">
+							<unit-configuration-filter-segment-options [Show]="showSpinner" [segmentData]="segmentResponseBody"></unit-configuration-filter-segment-options>
+						</div>
+					</div>
+					<div class="col-xs-7">
+						<!--<filter-bank></filter-bank>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="access-options" [class.active]="tabSelected === 3" class="tab-pane">
+			<div class="container-fluid">
+				<div class="row filter-header" style="margin-top: 8px;">
+					<div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+						<div class="col-xs-12 filter_boxStyle">
+							<div class="col-xs-3">
+								<h3 style="padding-left:15px; margin-top: 10px">
+									{{headerCaption}} <i class="editProduct fa fa-pencil"></i>
+								</h3>
+							</div>
+							<div class="col-xs-9 padding_left_0 padding_right_0">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-7 filter_boxStyle">
+						<h3 style="margin-top: 10px;padding-left: 20px;">Filter Arrangements</h3>
+					</div>
+				</div>
+				<div class="row border-top">
+					<div class="col-xs-5 col-sm-5 border-right filter-depth">
+						<div class="row">
+							<div class="form-group display-inline"></div>
+						</div>
+						<div class="row">
+							<unit-configuration-filter-access-options *ngIf="filterBank !== null"
+                                                                      [segment]="filterBank.SegmentConfig_Filter.Segment">
+                            </unit-configuration-filter-access-options>
+						</div>
+					</div>
+					<div class="col-xs-7">
+						<!--<filter-bank></filter-bank>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="access-options" class="tab-pane">access-options</div>
+		<div id="const-overrides" class="tab-pane" [class.active]="tabSelected === 4">
+			<div class="container-fluid">
+				<div class="row filter-header" style="margin-top: 8px;">
+					<div class="col-xs-5 padding_left_0 padding_right_0 border_left border_right">
+						<div class="col-xs-12 filter_boxStyle">
+							<div class="col-xs-3">
+								<h3 style="padding-left:15px; margin-top: 10px">
+									{{headerCaption}} <i class="editProduct fa fa-pencil"></i>
+								</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-7 filter_boxStyle">
+						<h3 style="margin-top: 10px;padding-left: 20px;">Filter Arrangements</h3>
+					</div>
+				</div>
+				<div class="row border-top">
+					<div class="col-xs-5 col-sm-5 border-right filter-depth">
+						<div class="row">
+							<div class="form-group display-inline"></div>
+						</div>
+						<div class="row">
+							<unit-configuration-filter-const-overrides *ngIf="filterBank !== null"
+                                                                      [segment]="filterBank.SegmentConfig_Filter.Segment">
+
+                            </unit-configuration-filter-const-overrides>
+						</div>
+					</div>
+					<div class="col-xs-7">
+						<!--<filter-bank></filter-bank>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

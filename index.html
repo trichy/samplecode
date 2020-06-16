@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>SelNav [AHU]</title>
+
+    <base href="http://localhost:4200/" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link rel="apple-touch-icon" href="http://localhost:4200/images/icons/ios/york-120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:4200/images/icons/ios/york-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4200/images/icons/ios/york-180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="http://localhost:4200/images/icons/ios/york-167.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/infragistics.2016.1/css/structure/infragistics.css" type="text/css" />
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/content/infragistics/infragistics.theme.css" type="text/css" />
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/content/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/content/toastr.css" type="text/css" />
+    <link rel="stylesheet" href="https://dev.selectionnavigator.com/common/content/jci-style-guide.css" type="text/css" />
+
+    <link rel="stylesheet" href="http://localhost:4200/css/bootstrap-switch.min.css" />
+    <link rel="stylesheet" href="http://localhost:4200/css/style.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+
+    <link rel="manifest" href="http://localhost:4200/manifest.json" /> 
+</head>
+<body>
+  <div class="container-fluid">
+    <div id="loader" class="loader-holder">
+      <div class="block">
+        <img src="http://localhost:4200/images/gif/Selnav_LoadingSpinner.gif" width="60" alt="loader" />
+      </div>
+    </div>
+    <input type="hidden" id="sessionTokenId" name="sessionTokenId" />
+    <input type="hidden" id="websiteBaseUrl" name="websiteBaseUrl" value="http://localhost:4200/" />
+    <input type="hidden" id="websiteAPIBaseUrl" name="websiteAPIBaseUrl" value="http://localhost:25673/" />
+    <input type="hidden" id="filterServiceApiBaseUri" name="filterServiceApiBaseUri" value="https://dev.selectionnavigator.com/AHUFilterServices/" />
+    <input type="hidden" id="fanServiceApiBaseUri" name="fanServiceApiBaseUri" value="https://dev.selectionnavigator.com/AHUFanServices/" />
+    <input type="hidden" id="estimatedApiBaseUrl" name="estimatedApiBaseUrl" value="https://dev.selectionnavigator.com/Estimating/" />
+    <input type="hidden" id="selNavSessionUrl" name="selNavSessionUrl" value="https://dev.selectionnavigator.com/selnavsession/" />
+	<input type="hidden" id="commonApiBaseUrl" name="commonApiBaseUrl" value="https://dev.selectionnavigator.com/common/" />
+    <input type="hidden" id="mixingSegmentUrl" name="mixingSegmentUrl" value="https://dev.selectionnavigator.com/AHUMixingSegmentServices/" />
+    <input type="hidden" id="openingServiceUrl" name="openingServiceUrl" value="https://dev.selectionnavigator.com/AHUOpeningServices/"  />
+	<input type="hidden" id="showCustomerPreferences" name="showCustomerPreferences" value="0" />
+	<input type="hidden" id="shellServicesApiBaseUrl" name="shellServicesApiBaseUrl" value="[#ShellServicesApiBaseUrl]" />
+  </div>
+
+  <div class="container-fluid">
+    <app></app>
+  </div>
+
+  <script src="https://dev.selectionnavigator.com/common/Plugins/jQuery-lib/2.0.3/jquery.min.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Plugins/jquery-ui/jquery-ui.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Scripts/jquery.validate.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Scripts/spin.min.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Infragistics.2016.1/js/infragistics.core.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Infragistics.2016.1/js/infragistics.lob.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Scripts/toastr.min.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Plugins/bootstrap/js/bootstrap.js"></script>
+  <script src="http://localhost:4200/js/bootstrap-switch.min.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Scripts/common.min.js"></script>
+  <script src="https://dev.selectionnavigator.com/common/Scripts/sfdc-canvas-all.js"></script>
+
+  <script src="http://localhost:4200/js/3d/three.min.js"></script>
+  <script src="http://localhost:4200/js/3d/controls/OrbitControls.js"></script>
+  <script src="http://localhost:4200/js/3d/loaders/ColladaLoader.js"></script>
+  <script src="http://localhost:4200/js/3d/Detector.js"></script>
+  <script src="http://localhost:4200/js/3d/libs/stats.min.js"></script>
+  <script src="http://localhost:4200/js/3d/libs/threex.domevents.js"></script>
+  <script src="http://localhost:4200/js/3d/three-dimensional-presenter-module.js"></script>
+
+  <script>
+      $("#loader").delay(500).fadeOut();
+  </script>
+  <script>
+        if ("serviceWorker" in navigator) 
+        {
+            navigator.serviceWorker.register(
+                "http://localhost:4200/service-worker.js",
+                { 
+                    scope: "http://localhost:4200/"
+                })
+                .then(
+                    function (registration) 
+                    {
+                        console.log("Service Worker registered");                       
+                    })
+                .catch(function (err) 
+                {
+                    console.log(
+                        "Service Worker registration failed: ", 
+                        err);
+                });
+        }
+		
+      getSessionToken();
+
+      function getSessionToken() {
+          console.log("Get token OutSide ServiceWorker Validation");
+          var obj = document.getElementById("sessionTokenId");
+
+          if (obj) {
+              console.log(document.location);
+              obj.value = document.location.search.split("&")[0].replace("?sid=", "");
+          }
+      }
+  </script>
+  <script>
+      $(function ()
+      {
+          // Detects if device is on iOS
+          const isIos = () =>
+          {
+              const userAgent = window.navigator.userAgent.toLowerCase();
+              return /iphone|ipad|ipod/.test(userAgent);
+          }
+
+          // Detects if device is in standalone mode
+          const isInStandaloneMode = () => ("standalone" in window.navigator) && (window.navigator.standalone);
+
+          // Checks if should display install popup notification:
+          if (isIos() && !isInStandaloneMode())
+          {
+              try
+              {
+                  //React.js function?
+                  this.setState({ showInstallMessage: true });
+              }
+              catch (e)
+              {
+                  console.log(e);
+              }
+              //Test Update
+          }
+      });
+  </script>
+   <style>
+        .ui-igcheckbox-container > span {
+            border: 1px solid #dadada;
+        }    
+    </style>
+
+</body>
+</html>

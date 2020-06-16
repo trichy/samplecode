@@ -1,0 +1,24 @@
+﻿<div class="form-group display-inline pull-left">
+    <div>
+        <input type="text" style="width: 230px;" value="AHU Default">
+    </div>
+    <div class="button-strip">
+        <button type="button" class="btn btn-action-custom" (click)="showSavePreferences()"><i class="fa fa-save"></i>Save As</button>
+        <modal-dialog [(visible)]="showSave" style="display:flex; align-content:center;">
+            <customer-preferences-save id="customerPreferencesSave" class="customer-preferences-save" style="width:100%;"></customer-preferences-save>
+        </modal-dialog>
+        <button type="button" class="btn btn-action-custom" (click)="showCustomerPreferences()"><i class="fa fa-exchange"></i>Change</button>
+        <modal-dialog [(visible)]="showPreferences">
+            <customer-preferences-change #preferencesChange id="customerPreferencesChange" class="customer-preferences-change" [show]="showPreferences" style="width:100%;"></customer-preferences-change>
+         </modal-dialog>
+    </div>
+</div>
+<div class="form-group display-inline pull-right">
+    <div class="button-strip">
+        <button type="button" id="btnCategories" class="btn btn-action-custom" (click)="showCustomerCategories()"><i class="fa fa-plus"></i>Category</button>
+        <button type="button" id="expandButton" #buttonCat class="btn btn-action-custom toggle" data-toggle="tooltip" data-placement="bottom" title="Compress" (click)="toastrClick()"><i class="fa fa-compress fa-no-text"></i></button>
+        <modal-dialog id="modalCategories" [(visible)]="showCategories" style="align-content:center; width:100%; top:1px;">
+           <customer-preferences-categories  id="customerPreferencesCategories" [showCat]="showCategories" class="col-xs-12 col-lg-8 customer-preferences-categories" style="align-content:center; width:100%; top:1px;"></customer-preferences-categories>
+        </modal-dialog>
+    </div>
+</div>

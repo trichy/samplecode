@@ -1,0 +1,55 @@
+﻿<div class="panel panel-default jci-panel-body">
+    <div class="panel-heading"><strong>Details</strong></div>
+    <div class="panel-body" *ngIf=" _unit && _unit !== null">
+
+        <div class="form-group">
+            <div class="checkbox">
+                <input id="showDoorsOpen" type="checkbox" value="1" [checked]="showDoorsOpen" 
+                       (change)="onShowDoorsOpen($event)">
+                <label for="showDoorsOpen">Show Doors Open</label>
+            </div>
+            <div class="checkbox">
+                <input id="openingsSelected" type="checkbox" value="1" [checked]="openingsSelected"
+                       (change)="onOpeningsSelected($event)">
+                <label for="openingsSelected">Openings</label>
+            </div>
+            <div class="checkbox">
+                <input id="box-3" type="checkbox" value="1" disabled>
+                <label for="box-3">Panels</label>
+            </div>
+            <div class="checkbox">
+                <input id="box-4" type="checkbox" value="1" disabled>
+                <label for="box-4">Shipping Splits</label>
+            </div>
+            <div class="checkbox">
+                <input id="box-5" type="checkbox" value="1" disabled>
+                <label for="box-5">Lights/Outlets</label>
+            </div>
+            <div class="checkbox">
+                <input id="box-6" type="checkbox" value="1" disabled>
+                <label for="box-6">FMED</label>
+            </div>
+            <div class="checkbox">
+                <input id="segmentSelected" type="checkbox" value="1" [checked]="segmentSelected"
+                       (change)="onSegmentSelected($event)">
+                <label for="segmentSelected">Segment ID</label>
+            </div>
+            <div class="checkbox">
+                <input id="airpathSelected" type="checkbox" value="1" [checked]="airpathSelected"
+                        (change)="onAirpathSelected($event)">
+                <label for="airpathSelected">Airpaths</label>
+            </div>
+            <div class="checkbox">
+                <input id="box-9" type="checkbox" value="1" disabled>
+                <label for="box-9">Dampers</label>
+            </div>
+            <div class="checkbox">
+                <input id="bulkheadSelected" type="checkbox" value="bulkhead" [checked]="bulkheadSelected"
+                       (change)="onBulkheadSelected($event)">
+                <label for="bulkheadSelected">Bulkheads</label>
+            </div>
+
+        </div>
+    </div>
+
+</div>

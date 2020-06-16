@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <br />
+    <div class="col-xs-12">
+        <div id="refreshGrid" style="text-align:right">
+            <button type="button" class="btn btn-action" (click)="refreshCabinetData()" [disabled]="refreshDisabled">
+                <i class="fa fa-refresh"></i>
+            </button>
+        </div>
+        <div [style.pointer-events]="gridDisable?'none':'auto'" class="grid-disable">
+            <idGridTable   #cabinetSizeResult
+                         [idTable]="gridTableID"
+                         [primaryId]="model.primaryId"
+                         [dataSource]="model.dataSource"
+                         [columns]="model.columns"
+                         [showGrid]="show"
+                         [features]="model.features">
+            </idGridTable>
+        </div>
+    </div>
+</div>

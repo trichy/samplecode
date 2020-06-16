@@ -1,0 +1,71 @@
+﻿.navbar-main {
+    overflow-y: auto;
+    z-index: 1;
+}
+
+/*NOTE: the style for the carat icon is in the main style.css */
+
+.jci-panel-heading:after {
+    content: "\f0d7";
+    /*margin-left: 68%;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    /*position: absolute;
+    top: 6px;
+    right: 10px;*/
+    float: right;
+}
+
+.jci-panel-heading-collapsed:after {
+    content: "\f0da";
+    /*margin-left: 100%;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    /*position: relative;
+    top: 6px;
+    right: 10px;
+        */
+    float:right;
+}
+
+
+.tunnel-ui-content {
+    margin: -15px;
+    overflow-y: auto;
+    min-height: 120px;
+
+    /*Animations ? */
+}
+
+/*SCROLLBAR SHOULD BE GENERIC and be in the main style.css?*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(204,204,204,0.8);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(204,204,204,0.4);
+    }
+
+.panel /deep/ .panel{border:none;}
+.panel /deep/ .panel-primary {
+    border: none;
+}
+.panel /deep/ .panel-heading {
+    padding: 2px 10px;
+    height: 22px;
+}
+
+.tunnel-ui-content .checkbox{ margin: 5px 15px;}

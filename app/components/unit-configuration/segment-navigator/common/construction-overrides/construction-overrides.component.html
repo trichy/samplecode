@@ -1,0 +1,81 @@
+﻿<div class="row">
+    <div class="form-group display-inline col-xs-12">
+        <div class="col-xs-6">
+            <div class="col-xs-4 nopadding">
+                <label class="shift_style">
+                    Interior Liner:
+                </label>
+            </div>
+            <div class="col-xs-8 nopadding">
+                <combobox-material-type-segment-liner [producttype]="segment.unit.productType"
+                                                      [brandoption]="segment.unit.unitOptions.brandOption"
+                                                      [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                      [(ngModel)]="segment.interiorMaterialType">
+                </combobox-material-type-segment-liner>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-xs-4 nopadding">
+                <label class="shift_style">
+                    Tread Plate:
+                </label>
+            </div>
+            <div class="col-xs-8 nopadding">
+                <combobox-material-type-treadplate [producttype]="segment.unit.productType"
+                                                   [brandoption]="segment.unit.unitOptions.brandOption"
+                                                   [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                   [(ngModel)]="segment.treadPlateMaterialTypeComposite">
+                </combobox-material-type-treadplate>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group display-inline col-xs-12">
+        <div class="col-xs-6">
+            <div class="col-xs-4 nopadding">
+                <label class="shift_style">
+                    Wall Insulation:
+                </label>
+            </div>
+            <div class="col-xs-8 nopadding">
+                <combobox-insulation-type [producttype]="segment.unit.productType"
+                                          [brandoption]="segment.unit.unitOptions.brandOption"
+                                          [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                          [(ngModel)]="segment.constructionOptions.insulationType">
+                </combobox-insulation-type>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-xs-4 nopadding">
+                <label class="shift_style">Floor Material:</label>
+            </div>
+
+            <div class="col-xs-8 nopadding">
+                <combobox-material-type-segment-floor [producttype]="segment.unit.productType"
+                                                      [brandoption]="segment.unit.unitOptions.brandOption"
+                                                      [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                      [(ngModel)]="segment.floorMaterialType">
+                </combobox-material-type-segment-floor>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Checkbox -->
+<div class="row">
+    <div class="form-group display-inline col-xs-12">
+        <div class="col-xs-6">
+            <div class="col-xs-4 nopadding">
+                <label class="shift_style">
+                    Mylar:
+                </label>
+            </div>
+            <div class="col-xs-3" 
+                 style="padding-left:7px;">
+                <input id="chkMylar" 
+                       type="checkbox" 
+                       [(ngModel)]="segment.constructionOptions.hasMylarOption" />
+            </div>
+        </div>
+    </div>
+</div>

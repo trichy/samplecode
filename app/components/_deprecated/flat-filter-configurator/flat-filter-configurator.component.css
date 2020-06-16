@@ -1,0 +1,32 @@
+﻿.widget-wrapper {
+    /*background-color: darkgrey;*/
+    /*display:table-row;*/
+    /*height: 40vh;*/
+    /*flex: 1;*/
+    border-left: solid 1px #e8e8e8;
+    border-right: solid 1px #e8e8e8;
+}
+
+
+.widget-header {
+    position: relative;
+    /*left: 50%;*/
+    width: 100%;
+    height: 24px;
+    display: inline-block;
+    background-color: #e8e8e8;
+}
+
+.widget-body {
+    min-height: 500px;
+}
+
+#canvas-filter {
+    height: calc(100%);
+    min-height: 500px;
+    background-color: #a9a9a9;
+}
+
+.inline-label {
+    margin-top: 3px;
+}

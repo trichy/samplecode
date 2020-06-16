@@ -1,0 +1,38 @@
+﻿.radio, .checkbox {
+    margin-top: 0px !important;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.outer-panel {
+    width: 1134px;
+}
+
+.nopadding {
+    padding: 1px;
+}
+
+label.shift_style {
+    float: right;
+}
+
+.leftBoxSize {
+    width: 46.33333%;
+    margin-right: 1px;
+}
+
+.rightBoxSize {
+    width: 53.33333%;
+}
+
+.criteria-header {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.align-right {
+    float: right;
+    padding-right: 17px;
+}

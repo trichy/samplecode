@@ -1,0 +1,125 @@
+﻿.filter-wrapper {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.line {
+    height: 1px;
+    border-top: 1px solid #ccc;
+    margin-top: -1px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.tab-view-box{
+    padding: 0 5px 0 0;
+}
+
+.tab-view {
+    display: flex;
+    justify-content: space-between;
+    flex: auto;    
+}
+
+.tab-view .radio {
+    margin-top:0;
+}
+
+@media screen and (max-width: 1500px) {
+    .tab-view {
+        display:block;
+    }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;    
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(204,204,204,0.8);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(204,204,204,0.4);
+    }
+
+.unitNav-L {
+    position: relative;
+    padding: 0;
+    width: 16%;
+}
+
+    .unitNav-L .segNameNav {
+        margin-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        /*border-top-left-radius: 2px;*/
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 296px;
+        border-right: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+
+        .unitNav-L .segNameNav ul {
+            cursor: pointer;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+
+    .nav.nav-tabs li {
+        width: 100%;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .nav.nav-tabs li a {
+        padding-left: 4px;
+        padding-right: 2px;
+        padding-bottom: 13px;
+        padding-top: 13px;
+        font-size: 11px;
+        border-color: #dadada;
+        margin: 0;
+    }
+
+        .nav.nav-tabs li a:first-child{border:none;}
+
+        .nav.nav-tabs li.active > a,
+        .nav.nav-tabs li.active > a:hover{ border:none; cursor:default;}
+
+        .unitNav-L.nav-tabs {
+            border-top: 1px solid #cccccc;
+            border-top-right-radius: 5px;
+            border-bottom: 1px solid transparent;
+        }
+
+.unitNav-R {
+    position: relative;
+    padding: 0;
+    width: 84%;
+}
+
+.tab-content.bordered {
+    padding: 0;
+}
+
+.tab-content .tab-pane-box {
+    padding: 0;
+}
+
+.pointer{ cursor: pointer;}

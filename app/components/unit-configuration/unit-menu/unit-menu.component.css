@@ -1,0 +1,55 @@
+﻿ 
+
+
+.panel-group {
+    margin-bottom: 0px;
+}
+    .panel-group .panel {
+        margin-top: 0px !important;
+    }
+
+.scroll {
+    overflow-y: auto;
+    max-height: 160px;
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(204,204,204,0.8);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(204,204,204,0.4);
+    }
+
+
+.box {
+    background: #BADA55;
+    border: 1px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    z-index: 10000;
+}
+
+
+.box .dragging {
+    background: coral;
+  }

@@ -1,0 +1,9 @@
+td.ui-state-hover {
+    font-weight: bold !important;
+}
+
+.ui-iggrid-record tr > td:hover {
+    color:red !important;
+}
+
+ 

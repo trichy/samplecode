@@ -1,0 +1,632 @@
+﻿<div class="panel panel-default outer-panel">
+
+    <div class="modal-header">
+        <button class="close" (click)="onCloseModalClicked()"><i class="fa fa-close"></i></button>
+        <h3 class="modal-title" id="coilSelection">Coil Selection</h3>
+    </div>
+
+    <div class="panel-body">
+        <!-- Coil Tag -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group display-inline">
+                            <div class="col-sm-2">
+                                <label>Coil Tag:</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="coilTag" />
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-control select-inline" id="method">
+                                    <option>Cooling</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-control select-inline" id="media">
+                                    <option>Water</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-control select-inline" id="mode">
+                                    <option>Select</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-control select-inline" id="location">
+                                    <option>Left</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Air Data -->
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="airData">
+                        <label>Air Data:</label>
+                    </div>
+                    <div class="panel-body" style="height: 410px;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="col-xs-3 col-xs-offset-5">
+                                    <div class="radio">
+                                        <input id="std" type="radio" name="std">
+                                        <label for="std">Std</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <input id="actual" type="radio" name="actual">
+                                        <label for="actual">Actual</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group nopadding">
+                            <div class="row nopadding">
+                                <div class="col-sm-5">
+                                    <div class="radio">
+                                        <input id="AirFlow" type="radio" value="AirFlow" name="AirFlow" checked>
+                                        <label for="AirFlow">Air Flow</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>ACFM</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding ">
+
+                                <div class="col-sm-5">
+                                    <div class="radio">
+                                        <input id="faceVelocity" type="radio" value="faceVelocity" name="faceVelocity" checked>
+                                        <label for="faceVelocity">Face Velocity</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>AFPM</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>Flow Direction:</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select style="width:80%">
+                                        <option>Horizontal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>Altitude:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>ft</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>EAT-DB:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>EAT-WB:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>Max.APD:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>in. water</span>
+                                </div>
+                            </div>
+                            <div class="row criteria-header">
+                                <h3>Required:</h3>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5">
+                                    <div class="checkbox">
+                                        <input id="latDB" type="checkbox" value="latDB" name="latDB" checked>
+                                        <label for="latDB">LAT-DB</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5">
+                                    <div class="checkbox">
+                                        <input id="LatWB" type="checkbox" name="LatWB">
+                                        <label for="LatWB">LAT-WB</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="col-sm-5">
+                                    <div class="radio">
+                                        <input id="Tmbh" type="radio" value="Tmbh" name="Tmbh" checked>
+                                        <label for="Tmbh">TMBH</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="Tmbh" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fluid Data -->
+            <div class="col-xs-12 col-md-5 col-lg-3">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <label>Fluid Data:</label>
+                        </div>
+                        <div class="panel-body" style="height: 310px;">
+                            <div class="row nopadding">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>EWT:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="ewtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5 text-align-right">
+                                    <label>Max. WPD:</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="wpdLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>ft.</span>
+                                </div>
+                            </div>
+                            <div class="row criteria-header">
+                                <h3>Required:</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="radio">
+                                        <input id="Lwt" type="radio" value="Lwt" name="Lwt" checked>
+                                        <label for="Lwt">LWT</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="lwtLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>deg.F</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="radio">
+                                        <input id="Flow" type="radio" value="Flow" name="Flow" checked>
+                                        <label for="Flow">Flow</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input id="flowLbl" class="form-control">
+                                </div>
+                                <div class="col-sm-2 nopadding">
+                                    <span>GPM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height:80px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Coil Details -->
+            <div class="col-xs-12 col-md-7 col-lg-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label>Coil Details:</label>
+                    </div>
+                    <div class="panel-body" style="height: 410px;">
+                        <!-- 1 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Configuration:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>Standard</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Fin height:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>42.50</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+                                            <span>in.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Tube Dia.:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Finned Length:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>45</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+                                            <span>in.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Tube thinkness:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Header Matl:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>Copper</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Return Thinkness:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Conn. Matl.:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>45</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Fin Type:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Conn. Type:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>45</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Fouling Factor:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Conn. Rotation:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>None</option>
+                                            </select>
+                                        </div>
+                                        <!--<div class="col-xs-2 nopadding">
+                                            <span>in.</span>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Conn. Diameter:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>Auto Select</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+                                            <span>in.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row criteria-header">
+                            <h3>Fin Material:</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="col-xs-3">
+                                    <div class="radio">
+
+                                        <input id="Alum" type="radio" value="Alum" name="Alum">
+                                        <label for="Alum">Alum</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="radio">
+                                        <input id="Cu" type="radio" value="1" name="Cu">
+                                        <label for="Cu">Cu</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="col-xs-3">
+                                    <div class="checkbox">
+                                        <input id="finMaterial1" type="checkbox" name="finMaterial1">
+                                        <label for="finMaterial1" class="pull-left">0.006</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox">
+                                        <input id="finMaterial2" type="checkbox" name="finMaterial2">
+                                        <label for="finMaterial2" class="pull-left">0.008</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox">
+                                        <input id="finMaterial3" type="checkbox" name="finMaterial3" checked="checked">
+                                        <label for="finMaterial3" class="pull-left">0.010</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="checkbox">
+                                        <input id="finMaterial4" type="checkbox" name="finMaterial4">
+                                        <label for="finMaterial4" class="pull-left">0.0045</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 7 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Minimum FPI:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Conn. Offset:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>6</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-2 nopadding">
+                                            <span>in.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 8 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Maximum FPI:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1/2"</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Casing Matl:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>45</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 9 -->
+                        <div class="row">
+                            <div class="col-xs-12 nopadding">
+                                <div class="form-group display-inline">
+                                    <div class="col-xs-6 nopadding leftBoxSize">
+                                        <div class="col-xs-6 nopadding">
+                                            <label class="shift_style">Minimum Rows:</label>
+                                        </div>
+                                        <div class="col-xs-6 nopadding">
+                                            <select style="width:100%">
+                                                <option>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 nopadding rightBoxSize">
+                                        <div class="col-xs-5 nopadding">
+                                            <label class="shift_style">Coil Coating:</label>
+                                        </div>
+                                        <div class="col-xs-5 nopadding">
+                                            <select style="width:100%">
+                                                <option>None</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+        <div class="row">
+            <div class="col-xs-12">
+                <idGridTable #gridResult [idTable]="'coilSelectTable'" [primaryId]="model.primaryId" [dataSource]="model.dataSource" [columns]="model.columns" [showGrid]="show" [features]="model.features">
+                </idGridTable>
+            </div>
+        </div>
+    </div>
+    <!-- Buttons -->
+    <div class="modal-footer" style="text-align:left">
+        <button type="button" name="" id="calcBtn" class="btn btn-custom">Calc</button>
+        <button type="button" name="" id="warnBtn" class="btn btn-custom secondary">Warnings</button>
+        <button type="button" name="" id="returnBtn" class="btn btn-custom secondary" (click)="done()">Return</button>
+    </div>
+</div>

@@ -1,0 +1,247 @@
+﻿<div *ngIf="fan !== null"
+     class="">
+    <div style="padding-bottom: 0px;">
+        <div>
+            <div class="form-group" name="myForm">
+                <div class="row flex-container" style="width:95%;">
+                    <div class="col-sm-4 criteria-box">
+                        <div class="row criteria-header">
+                            <div class="col-sm-5">
+                                <h3>Static Pressure</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <p>ESP</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <input (ngModelChange)="validateEspNumber($event)"
+                                       [class.jci-invalid]="isInvalidNumber" [ngModel]="espbox | number" validation="pattern=/[0-9]{2}\.[0-9]{2}$/:alt=Invalid number"
+                                       type="number" step="0.01" name="espbox" min="0" id="espbox" class="form-control" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>In w.g.</span>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" name="" id="" class="btn btn-custom secondary btn-sm pull-right" (click)="debugModel()">TSP Summary</button>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <p>ISP</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <input (change)="setTwoNumberDecimal($event)" (ngModelChange)="ispbox=$event" [ngModel]="ispbox | number:'1.2-2'" type="number"
+                                       step="0.01" name="ispbox" id="ispbox" class="form-control" disabled>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>In w.g.</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <span></span>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <p>TSP</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <input [(ngModel)]="tspbox" type="number" step="0.01" name="tspbox" id="tspbox" class="form-control" disabled>
+                            </div>
+                            <div class="col-sm-3">
+                                <span>In w.g.</span>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox form-check form-check-inline" style="margin-top:0px;margin-bottom:0;">
+                                    <input id="opd" type="checkbox" class="form-check-input" value="1" checked disabled>
+                                    <label for="opd">Include OPD</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <span></span>
+                            </div>
+                            <div class="col-sm-4" style="margin-top:10px;">
+                            </div>
+                            <div class="col-sm-6">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 criteria-box">
+                        <div class="row criteria-header">
+                            <h3>Motor</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Manufacturer</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-manufacturer [producttype]="fan.unit.productType"
+                                                             [brandoption]="fan.unit.unitOptions.brandOption"
+                                                             [(ngModel)]="fan.motor.manufacturer"></combobox-motor-manufacturer>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Motor Eff</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-efficiency [producttype]="fan.unit.productType"
+                                                           [brandoption]="fan.unit.unitOptions.brandOption"
+                                                           [(ngModel)]="fan.motor.motorEfficiency"></combobox-motor-efficiency>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Motor Type</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-type [producttype]="fan.unit.productType"
+                                                     [brandoption]="fan.unit.unitOptions.brandOption"
+                                                     [(ngModel)]="fan.motor.motorType"></combobox-motor-type>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Motor RPM</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-rpm [producttype]="fan.unit.productType"
+                                                    [brandoption]="fan.unit.unitOptions.brandOption"
+                                                    [(ngModel)]="fan.motor.rpm"></combobox-motor-rpm>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Drive</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <select [(ngModel)]="selectedFanDriveType" class="form-control select-inline">
+                                    <option *ngFor="let item of fanDriveType" [ngValue]="item">
+                                        {{item.uiDescription}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row criteria-header">
+                            <h3>Motor Inputs</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Volts</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-voltage [producttype]="fan.unit.productType"
+                                                        [brandoption]="fan.unit.unitOptions.brandOption"
+                                                        [(ngModel)]="fan.motor.voltage"></combobox-motor-voltage>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Phase</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-phase [producttype]="fan.unit.productType"
+                                                      [brandoption]="fan.unit.unitOptions.brandOption"
+                                                      [(ngModel)]="fan.motor.phase"></combobox-motor-phase>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Hertz</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <combobox-motor-hertz [producttype]="fan.unit.productType"
+                                                      [brandoption]="fan.unit.unitOptions.brandOption"
+                                                      [(ngModel)]="fan.motor.hertz"></combobox-motor-hertz>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 criteria-box">
+                        <div class="row criteria-header">
+                            <h3>Fan Options</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6" style="margin-left: -15px;">
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-1" type="checkbox" class="form-check-input" value="1" checked>
+                                    <label for="box-1" class="pull-left">Forward Curve</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-2" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-2" class="pull-left">12 Blade Plenum</label>
+                                </div>
+
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-3" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-3">12 Blade Plenum with Welded Frame</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-4" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-4">9 Blade Plenum with Welded Frame</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-5" type="checkbox" class="form-check-input" value="1" checked>
+                                    <label for="box-5">9 Blade Plenum</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-6" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-6">Twin city</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-8" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-8">DWDI Airfoil</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-12" type="checkbox" class="form-check-input" value="1" checked>
+                                    <label for="box-12">Lau</label>
+                                </div>
+                                <div class="checkbox flex-checkbox">
+                                    <input id="box-13" type="checkbox" class="form-check-input" value="1">
+                                    <label for="box-13">EBM Papst</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="form-group display-inline">
+                                <label>Minimum Class Required </label>
+                                <div>
+                                    <select [(ngModel)]="selectedFanClass" class="form-control select-inline">
+                                        <option *ngFor="let item of fanClass" [ngValue]="item">
+                                            {{item.uiDescription}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="checkbox flex-checkbox">
+                                <input id="box-9" type="checkbox" class="form-check-input" value="1">
+                                <label for="box-9">L10=200000 Bearing Life</label>
+                            </div>
+                            <div class="checkbox flex-checkbox">
+                                <input id="box-10" type="checkbox" class="form-check-input" value="1">
+                                <label for="box-10">Industrial Grade Fan(DWDI and SWSI)</label>
+                            </div>
+                            <div class="checkbox flex-checkbox">
+                                <input id="box-11" type="checkbox" class="form-check-input" value="1">
+                                <label for="box-11">Near Motor Sync Speed</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

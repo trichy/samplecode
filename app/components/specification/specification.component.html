@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary panel-size">
+            <div class="panel-heading">Start here:</div>
+            <div class="panel-body">
+                Create basic specification for your unit as starting point.
+                Information highlighted in red is required, all other information is optional. If you are unsure of some of the
+                optional targets, just leave the default information. Each line represents a dedicated airpath/tunnel. When you are ready, select
+                the configure button to move to the configuration tool.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12" style="height: 250px">
+                <idGridTable #summaryAccessOptions
+                             [idTable]="gridTableID"
+                             [primaryId]="model.primaryId"
+                             [dataSource]="model.dataSource"
+                             [columns]="model.columns"
+                             [showGrid]="show"
+                             [features]="model.features">
+                </idGridTable>
+            </div>
+        </div>
+    </div>
+</div>

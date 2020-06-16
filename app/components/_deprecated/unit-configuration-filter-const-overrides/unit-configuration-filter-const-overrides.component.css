@@ -1,0 +1,18 @@
+﻿/*.row-style {
+    margin-top: 1%;
+}*/
+
+.nopadding {
+    padding: 0px !important;
+}
+
+label.shift_style {
+    float: right;
+}
+.combobox select {
+    width: 88%;
+    min-width: 0px;
+    margin-left: 5px;
+    padding: 0 3px;
+}
+

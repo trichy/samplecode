@@ -1,0 +1,229 @@
+﻿<div class="row">
+    <!-- Canvas -->
+    <div class="col-xs-12 col-lg-4 pull-left" style="padding:0px">
+        <div id="canvas">
+        </div>
+    </div>
+    <!--  -->
+    <div class="col-xs-12 col-lg-8" style="padding:5px">
+        <!-- Filter Sizes -->
+        <div class="row row-margin">
+            <div class="col-xs-12 col-sm-7">
+                <div class="table-responsive">
+                    <table class="" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="visibility:hidden"></th>
+                                <th>Height</th>
+                                <th>Width</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Maximum</th>
+                                <td><input id="tbMaxBankHeight" name="tbMaxBankHeight" type="number" [(ngModel)]="filterBank.configurationInputs.maximumBankHeight" style="width: 75px; text-align:center;" min="0" step=".01" required /></td>
+                                <td><input id="tbMaxBankWidth" name="tbMaxBankWidth" type="number" [(ngModel)]="filterBank.configurationInputs.maximumBankWidth" style="width: 75px; text-align:center;" min="0" step=".01" required /></td>
+                            </tr>
+                            <tr>
+                                <th>Actual</th>
+                                <td><label id="dtActualBankHeight" name="dtActualBankHeight"></label></td>
+                                <td><label id="dtActualBankWidth" name="dtActualBankWidth"></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 configure-btn-style">
+                <button type="button" class="btn btn-custom secondary" id="btnConfigure" style="text-align:center">Configure</button>
+            </div>
+
+        </div>
+        <!--<hr class="col-xs-11 hr-style" />-->
+        <!-- Dropdown boxes -->
+        <div class="row row-margin border">
+            <div class="col-xs-12">
+                <div class="row row-style">
+                    <div class="form-group display-inline nopadding">
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <label class="shift_style">Filter Loading:</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <combobox-filter-load-method [producttype]="filterBank.unit.productType"
+                                                         [brandoption]="filterBank.unit.unitOptions.brandOption"
+                                                         [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                         [descriptorinstance]="filterBank.segmentConfig_Filter.loadMethod_DescriptorInstance"
+                                                         [(ngModel)]="filterBank.segmentConfig_Filter.loadMethod_DescriptorInstance.enum">
+                            </combobox-filter-load-method>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <label class="shift_style">Filter Frame Material:</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <combobox-material-type-bulkhead [producttype]="filterBank.unit.productType"
+                                                             [brandoption]="filterBank.unit.unitOptions.brandOption"
+                                                             [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                             [descriptorinstance]="filterBank.segmentConfig_Filter.bulkheadMaterialType_DescriptorInstance"
+                                                             [(ngModel)]="filterBank.segmentConfig_Filter.bulkheadMaterialType_DescriptorInstance.enum">
+                            </combobox-material-type-bulkhead>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-style">
+                    <div class="form-group display-inline nopadding">
+                        <!--<div class="col-xs-4 col-sm-3 nopadding">
+                            <label class="shift_style">Filter Sizes:</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <select style="width:75%;">
+                                <option> </option>
+                            </select>
+                        </div>-->
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <label class="shift_style">Blankoff Material:</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-3 nopadding">
+                            <combobox-material-type-blankoff [producttype]="filterBank.unit.productType"
+                                                             [brandoption]="filterBank.unit.unitOptions.brandOption"
+                                                             [overridestyle]="'width:88%; min-width:0px; margin-left: 5px; padding: 0 3px;'"
+                                                             [descriptorinstance]="filterBank.segmentConfig_Filter.blankOffMaterialType_DescriptorInstance"
+                                                             [(ngModel)]="filterBank.segmentConfig_Filter.blankOffMaterialType_DescriptorInstance.enum">
+                            </combobox-material-type-blankoff>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<hr class="col-xs-11 hr-style" />-->
+        <!-- Filter Bank Size checkboxes -->
+        <div class="row row-margin">
+            <div class="col-xs-12 col-sm-6">
+                <form name="frmFields" id="frmFields" onsubmit="event.preventDefault();" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb24x24" type="checkbox" name="cb24x24" [(ngModel)]="filterBank.configurationInputs.include_24x24">
+                                        <label for="cb24x24" class="pull-left">24&quot; x 24&quot;</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb24x12" type="checkbox" name="cb24x12" [(ngModel)]="filterBank.configurationInputs.include_24x12">
+                                        <label for="cb24x12" class="pull-left">24&quot; x 12&quot;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb20x16" type="checkbox" name="cb20x16" [(ngModel)]="filterBank.configurationInputs.include_20x16">
+                                        <label for="cb20x16" class="pull-left">20&quot; x 16&quot;</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb16x20" type="checkbox" name="cb16x20" [(ngModel)]="filterBank.configurationInputs.include_16x20">
+                                        <label for="cb16x20" class="pull-left">16&quot; x 20&quot;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb24x20" type="checkbox" name="cb24x20" [(ngModel)]="filterBank.configurationInputs.include_24x20">
+                                        <label for="cb24x20" class="pull-left">24&quot; x 20&quot;</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="cb20x24" name="cb20x24" [(ngModel)]="filterBank.configurationInputs.include_20x24"/>
+                                        <label for="cb20x24" class="pull-left">20&quot; x 24&quot;</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input id="cb20x20" type="checkbox" name="cb20x20" [(ngModel)]="filterBank.configurationInputs.include_20x20">
+                                        <label for="cb20x20" class="pull-left">20&quot; x 20&quot;</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="cb12x24" name="cb12x24" [(ngModel)]="filterBank.configurationInputs.include_12x24"/>
+                                        <label for="cb12x24" class="pull-left">12&quot; x 24&quot;</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-6 nopadding">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4">
+                                <dl>
+                                    <dt class="col-sm-6 nopadding">Quantity</dt>
+                                </dl>
+                            </div>
+                            <div class="col-xs-6 col-sm-8">
+                                <dl>
+                                    <dt class="col-sm-6 nopadding">Filter Size</dt>
+                                </dl>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-12">
+                                <dl id="dl24x24" style="display: none;">
+                                    <dd id="dd24x24" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">24&quot; x 24&quot;</dd>
+                                </dl>
+                                <dl id="dl12x24" style="display: none;">
+                                    <dd id="dd12x24" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">12&quot; x 24&quot;</dd>
+                                </dl>
+                                <dl id="dl24x20" style="display: none;">
+                                    <dd id="dd24x20" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">24&quot; x 20&quot;</dd>
+                                </dl>
+
+                                <dl id="dl24x12" style="display: none;">
+                                    <dd id="dd24x12" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">24&quot; x 12&quot;</dd>
+                                </dl>
+                                <dl id="dl16x20" style="display: none;">
+                                    <dd id="dd16x20" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">16&quot; x 20&quot;</dd>
+                                </dl>
+                                <dl id="dl20x24" style="display: none;">
+                                    <dd id="dd20x24" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">20&quot; x 24&quot;</dd>
+                                </dl>
+
+                                <dl id="dl20x16" style="display: none;">
+                                    <dd id="dd20x16" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">20&quot; x 16&quot;</dd>
+                                </dl>
+                                <dl id="dl20x20" style="display: none;">
+                                    <dd id="dd20x20" class="col-sm-4"></dd>
+                                    <dd class="col-sm-6">20&quot; x 20&quot;</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix visible-xs-block">
+        </div>
+    </div>
+</div>
